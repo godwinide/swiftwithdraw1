@@ -1,0 +1,361 @@
+
+<div class="root-content">
+<div class="pusher push-trading">
+<div>
+<div class="pusher pusher-min-400">
+<section class="img-bg-section">
+<div class="row">
+<ul class="tabs">
+<li><a href="#" class="active">Account Funding</a></li>
+<li><a href="/withdrawal">Withdrawals</a></li>
+
+</ul>
+<div class="mob-tab-nav mob-main-tabs">
+<div class="ui not_select dropdown mob-tabular" tabindex="0">
+<div class="text default">Withdrawals</div>
+<i class="dropdown icon"></i>
+<div class="menu" tabindex="-1">
+<a href="/funding" class="item">Account Funding</a>
+
+</div>
+</div>
+</div>
+<div class="top-info">
+<h2 class="title">Withdrawals</h2>
+</div>
+</div>
+<span class="blue-arrow"></span>
+</section>
+<div style="">
+<section class="content-box">
+<div class="row">
+<div class="account-funding">
+
+
+
+<div class="wallet-drop-func" data-ng-func="">
+<div class="ui dropdown amount-dropdown" tabindex="0">
+
+<div class="text">
+<div class="amount-item">
+
+<div class="amount-val"><b><%= comma(req.user.balance) %></b> <b
+ng-bind="w.currency"
+class="ng-binding"><%= req.user.currency %></b></div>
+<span class="amount-net">Net Balance:
+<b><%= comma(req.user.balance) %></b> <b
+ng-bind="w.currency"
+class="ng-binding"><%= req.user.currency %></b></span>
+</div>
+</div>
+<i class="dropdown icon" tabindex="0">
+<div class="menu" tabindex="-1"></div>
+</i>
+<div class="menu" tabindex="-1">
+<!-- ngRepeat: w in info.balances -->
+<div class="item active" role="button" tabindex="0" style="">
+<div class="amount-item">
+<span class="amount-id">
+
+
+<div class="amount-val"><b><%= comma(req.user.balance) %></b>
+<b><%= req.user.currency %></b>
+</div>
+<span class="amount-net">Net Balance:
+<b><%= comma(req.user.balance) %></b>
+<b><%= req.user.currency %></b></span>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<div class="funding-method-wrap">
+
+<div class="ui bottom attached tab segment active" data-tab="trading-account">
+<div class="wd-warn"><b>Important:</b> Chosen withdrawal method should
+correspond with method used for deposit.</div>
+
+<h2 class="title-wd-balance">Your available balance is:
+<span class="balance">
+<span><%= comma(req.user.balance) %> <%= req.user.currency %></span>
+
+</span>
+</h2>
+
+<div class="ui top attached tabular menu pay-tabs"
+style="margin-top: 20px;">
+<span class="item recomended active" data-tab="nine" role="button"
+tabindex="0"><span class="recomended-label"><span
+style="color:#fff;">recommended</span></span><i
+class="select-bitcoin"></i><img
+src="/assets/btc.png" /><br>Bitcoin</span>
+
+<!-- <span class="item" data-tab="third" role="button" tabindex="0"><i class="select-litecoin"></i><img src="assets/ltc.png" /><br >Litecoin</span>
+<span class="item" data-tab="four" role="button" tabindex="0"><i class="select-western"></i><img src="assets/wes.png" /><br >Western Union</span>
+<span class="item" data-tab="seven" role="button" tabindex="0"><i class="select-money"></i><img src="assets/mgr.png" /><br >MoneyGram</span>
+<span class="item" data-tab="five" role="button" tabindex="0"><i class="select-okpay"></i><img src="assets/eth.png" /><br >Ethereum</span>
+<span class="item" data-tab="six" role="button" tabindex="0"><i class="select-perfect"></i><img src="assets/pmo.png" /><br >Perfect Money</span> -->
+<span class="item" data-tab="two" role="button" tabindex="0"><i
+class="select-bank"></i><img
+src="/assets/transfer.png" /><br>Bank Transfer</span>
+<!-- <span class="item" data-tab="eight" role="button" tabindex="0"><i class="select-neteller"></i><img src="assets/net.png" /><br >Neteller</span>
+-->
+
+
+</div>
+<div class="mob-tab-nav tabular">
+<div class="ui select dropdown mob-tabular">
+<div class="text default">Bitcoin</div>
+<i class="dropdown icon"></i>
+<ul class="menu">
+
+<li class="item" data-tab="nine" role="button" tabindex="0">
+Bitcoin</li>
+<!-- <li class="item" data-tab="third" role="button" tabindex="0">Litecoin</li>
+<li class="item" data-tab="four" role="button" tabindex="0">Western Union</li>
+<li class="item" data-tab="five" role="button" tabindex="0">Ethereum</li>
+<li class="item" data-tab="six" role="button" tabindex="0">Perfect Money</li>
+<li class="item" data-tab="seven" role="button" tabindex="0">MoneyGram</li>
+<li class="item" data-tab="eight" role="button" tabindex="0">Neteller</li> -->
+<li class="item" data-tab="two" role="button" tabindex="0">Bank
+Transfer</li>
+</ul>
+</div>
+</div>
+<div class="pay-tabs-content">
+
+
+<div class="ui bottom attached tab segment" data-tab="two">
+<p class="info-selected-pay">To request for withdrawal via <b>Bank
+Transfer</b>, please make at least one trading deposit by
+using selected method.</p>
+<form method="get" action="/transfer_code24">
+<div style="font-size:small; color:#FF0000"></div>
+<label>
+<span>Withdrawal amount: </span>
+<span>USD</span>
+<input type="text" required="" name="amount"
+placeholder="0.00" size="20" style="min-width:150px"
+onkeypress="javascript:return isNumber(event)"></label>
+<input type="hidden" required="" name="" value="Bank Transfer"
+size="20" style="min-width:150px">
+<label>
+<div style="height:10px"></div>
+<label>
+<span>Bank Name: </span>
+<input type="text" required="" name="bank_name" value=""
+size="40" style="min-width:200px">
+</label>
+<div style="height:10px"></div>
+<span>Account Name: </span>
+<input type="text" required="" name="acct_name" value=""
+size="40" style="min-width:200px">
+</label>
+<div style="height:10px"></div>
+<label>
+<span>Account Number: </span>
+<input type="text" required="" name="acct_no" value=""
+size="40" style="min-width:200px">
+</label>
+<div style="height:10px"></div>
+<label>
+<span>Routing Number: </span>
+<input type="text" required="" name="swift" value=""
+size="40" style="min-width:200px">
+</label>
+<!-- <input type="hidden" name="wallet" value="">
+<div style="height:10px"></div> -->
+<!--<label>-->
+<!--    <span>Transfer Code: </span>-->
+<!--    <input type="hidden" required="" name="" value=""-->
+<!--        size="40" style="min-width:200px">-->
+<!--        <strong></strong> <span style="color:red;">-->
+ </span> </strong>
+<!--</label>-->
+<br> <br>
+<input type="hidden" name="transaction_id"
+value="IOB3wq8">
+<button class="ui button primal" type="submit"
+name="bank_withdrawal" id="bank_withdrawal">Next <span
+class="arrow-next">&rarr;</span></button>
+</form>
+</div>
+
+<div class="ui bottom attached tab segment active" data-tab="nine">
+<p class="info-selected-pay">Bitcoin is recommended withdrawal
+method. It provides <b>fastest withdrawal</b>.
+To request for withdrawal to bitcoin, please confirm you have
+bitcoin account or create it.</p>
+
+
+<%- include("./partials/messages") %>
+
+
+<div class="mini-withdraw-form" style="display:inline;">
+<div class="add-card-button">
+<button class="ui button primal" id="btc_btn">
+<span>I have Bitcoin account</span>
+</button>
+
+<div aria-hidden="false" class="">
+<a href="https://www.coinbase.com/" target="_blank"
+style="font-size: 12px;margin-top: 10px;display: inline-block;">Open
+a coinbase account</a><br />
+<a href="https://www.blockchain.com/" target="_blank"
+style="font-size: 12px;margin-top: 10px;">Open a
+blockchain account</a>
+</div>
+</div>
+
+
+
+</div>
+
+
+<div class="mini-withdraw-form" style="display:inline;">
+
+<div class="input-amount-wrap">
+
+<div id="btc_info">
+<center>
+<h2>Bitcoin Withdtrawal</h2>
+</center>
+<br /><br />
+<p>Please confirm you have a bitcoin account by clicking
+on "I have Bitcoin account" button</p>
+</div>
+<div id="with_form" style="display:none;">
+<form method="get" action="/transfer_code24">
+<div id="error"
+style="font-size:small; color:#FF0000"></div>
+<label>
+
+<input type="hidden" required="" name=""
+value="Bitcoin" size="20"
+style="min-width:150px">
+<span>Withdrawal amount: </span>
+
+<input type="text" required="" name="amount"
+placeholder="" size="20"
+style="min-width:150px" id="amount"
+onkeypress="javascript:return isNumber(event)"></label>
+<div style="height:10px"></div>
+<label>
+<span>Bitcoin wallet: </span>
+<input type="text" required="" name="wallet"
+value="" size="40" style="min-width:200px">
+
+<!-- <input type="hidden" id="bank_name" name ="bank_name" value="">
+<input type="hidden" name="acct_name" value="">
+<input type="hidden" id="$acct_no" name ="$acct_no" value="">
+<input type="hidden" name="swift" value="">
+
+<input type="hidden" name="wallet" value=""> -->
+</label> <br>
+
+<!--<label>-->
+<!--    <span>Transfer Code: </span>-->
+<!--    <input type="hidden" required="" name=""-->
+<!--        value="" size="40" style="min-width:200px">-->
+<!--    <br>-->
+
+<!--</label>-->
+
+
+<input type="hidden" name="transaction_id"
+value="OphB8LQ">
+<button class="ui button primal" type="submit"
+name="wallet-me"
+id="wallet-me">Next <span
+class="arrow-next">&rarr;</span></button>
+</form>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<p class="after-note">
+<b>Please note:</b>
+before approving a withdrawal request, you may be required to submit
+proof
+of identity and address of the requester. Withdrawal fees will be
+applied, based on type of trading account and acceptable withdrawal
+method. Withdrawals are normaly processed, using the same method as
+deposit was done. For security reasons, withdrawal requests to ewallets,
+bank and creditcard accounts, not belonging to a trading account owner
+are denied. Please refer to terms and conditions for more information.
+</p>
+</div>
+
+</div>
+</section>
+
+
+<style class="ng-scope">
+.md-dialog-content {
+color: #333;
+}
+
+.wd-warn {
+font-size: 14px;
+font-weight: 400;
+color: #fff;
+}
+
+.wd-pending {
+margin: 40px 0;
+}
+</style>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<script>
+var btc_btn = document.getElementById('btc_btn');
+btc_btn.onclick = function() {
+document.getElementById('btc_info').style = "display:none";
+document.getElementById('with_form').style = "display:block";
+}
+</script>
+<script>
+var witamount = document.getElementById('amount');
+var wit_btn = document.getElementById('wit_btn');
+witamount.onkeyup = function() {
+if (witamount.value > accountbal) {
+document.getElementById('error').innerHTML = "Amount must not exceed available balance";
+wit_btn.setAttribute('disabled', 'disabled');
+} else if (isNaN(witamount.value) || witamount.value < 0) {
+document.getElementById('error').innerHTML = "Amount is invalid";
+wit_btn.setAttribute('disabled', 'disabled');
+} else {
+document.getElementById('error').innerHTML = "";
+wit_btn.removeAttribute('disabled');
+}
+}
+witamount.onchange = function() {
+if (witamount.value > accountbal) {
+document.getElementById('error').innerHTML = "Amount must not exceed available balance";
+wit_btn.setAttribute('disabled', 'disabled');
+} else if (isNaN(witamount.value) || witamount.value < 0) {
+document.getElementById('error').innerHTML = "Amount is invalid";
+wit_btn.setAttribute('disabled', 'disabled');
+} else {
+document.getElementById('error').innerHTML = "";
+wit_btn.removeAttribute('disabled');
+}
+}
+
+function isNumber(evt) {
+var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+return false;
+
+return true;
+}
+</script>

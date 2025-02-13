@@ -1,0 +1,656 @@
+<div class="attn" id="attn">
+    Welocome to your Trading Dashboard.<br /><br />
+    <center><a id="attnBtn" class="ui button primal" onclick="closeAttn()">Close</a></center>
+</div>
+<script>
+function closeAttn() {
+    document.getElementById('attn').style = 'display: none';
+    document.getElementById('overly').style = 'display: none';
+}
+</script>
+<div class="overly" id='overly'></div>
+
+<div class="root-content">
+    <div class="pusher push-trading">
+
+
+        <div class="ds-table ds-rework">
+            <div class="row-cell row-run">
+                <div class="latest-bid">
+                    <table class="wrap tl-table">
+                        <tbody>
+                            <tr height="30px">
+                                <th class="nowrap" height="30px">Live forex:</th>
+                                <td class="" width="100%" height="30px" style="max-height:30px !important">
+
+
+
+                                    <div class="tradingview-widget-container">
+                                        <div class="tradingview-widget-container__widget"></div>
+                                        <script type="text/javascript"
+                                            src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+                                            async>
+                                        {
+                                            "symbols": [{
+                                                    "title": "S&P 500",
+                                                    "proName": "OANDA:SPX500USD"
+                                                },
+                                                {
+                                                    "title": "Shanghai Composite",
+                                                    "proName": "INDEX:XLY0"
+                                                },
+                                                {
+                                                    "title": "EUR/USD",
+                                                    "proName": "FX_IDC:EURUSD"
+                                                },
+                                                {
+                                                    "title": "BTC/USD",
+                                                    "proName": "BITFINEX:BTCUSD"
+                                                },
+                                                {
+                                                    "title": "ETH/USD",
+                                                    "proName": "BITFINEX:ETHUSD"
+                                                },
+                                                {
+                                                    "description": "AUD/USD",
+                                                    "proName": "OANDA:AUDUSD"
+                                                },
+                                                {
+                                                    "description": "CAD/USD",
+                                                    "proName": "FX_IDC:CADUSD"
+                                                },
+                                                {
+                                                    "description": "BCH/USD",
+                                                    "proName": "KRAKEN:BCHUSD"
+                                                }
+                                            ],
+                                            "colorTheme": "dark",
+                                            "isTransparent": true,
+                                            "displayMode": "adaptive",
+                                            "locale": "en"
+                                        }
+                                        </script>
+                                    </div>
+
+
+
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div style="width: 100%; height:60px; padding:0px; margin:0px">
+            <span class="lefttabnav float-left" onClick="showtab()"><i></i></span>
+            <div style="z-index:9999 !important; position:absolute; top: 40px;left: 0px; width:220px !important;"
+                class="lefttab">
+                <div class="category ui option-select tabdiv selection dropdown" tabindex="0"
+                    style="height:60px; width:220px;  position:absolute;">
+
+                    <input type="hidden" value=""><i class="dropdown icon" tabindex="0">
+                        <div class="menu" tabindex="-1"></div>
+                    </i>
+                    <div class="default text">Forex</div>
+                    <div class="menu" tabindex="-1"><a href="#" class="item"
+                            onClick="showed('forexscr')">Forex</a><a href="#" class="item"
+                            onClick="showed('cryptoscr')">Crypto</a><a href="#" class="item"
+                            onClick="showed('stockscr')">Stock</a></div>
+                </div>
+
+            </div>
+            <div class="wallet-drop-func" data-ng-func=""
+                style="position:absolute; top: 40px; right: 0px; width:250px;">
+                <div class="ui dropdown amount-dropdown walletdrop" tabindex="0"
+                    style="width:250px; z-index:99;">
+
+                    <div class="text">
+                        <div class="amount-item">
+
+                            <div class="amount-val">
+                                <span style="margin-top:10px;"><b><%= comma(req.user.balance) %></b>
+                                    <b>USD</b></span>
+                                <span style="position:absolute; font-size:small; top:0; right: 20px;"><i
+                                        class="fa fa-envelope-o"></i> <%= req.user.email %></span>
+                            </div>
+                            <span class="amount-net"><b></b> <b
+                                    ng-bind="w.currency" class="ng-binding">Total Balance </b></span>
+                        </div>
+                    </div>
+                    <i class="dropdown icon" tabindex="0">
+                        <div class="menu" tabindex="-1"></div>
+                    </i>
+                    <div class="menu" tabindex="-1">
+                        <!-- ngRepeat: w in info.balances -->
+                        <div class="item active" role="button" tabindex="0" style="">
+                            <div class="amount-item">
+                                <span class="amount-id">
+                                </span>
+
+                                <div class="amount-val"><b><%= comma(req.user.profit)%> <%= req.user.currency%></b>
+                                    <b></b>
+                                </div>
+                                <span class="amount-net">Profit Earned</b></span>
+                                <br>
+                                
+                        
+                                <br>
+                                <div class="amount-val"><b><%= comma(req.user.deposit)%> <%= req.user.currency %></b>
+                                    <b></b>
+                                </div>
+                                <span class="amount-net">Deposit Made</b></span>
+
+                                <br>
+                                
+                        
+                                <br>
+                                <div class="amount-val"><b><%= req.user.bonus %> <%= req.user.currency %></b>
+                                    <b></b>
+                                </div>
+                                <span class="amount-net">Bonus</b></span>
+                                
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="chat-platform-wrap minimized">
+            <hr>
+            <div class="theme-wrap dark-theme-wrap" style="width: 100%;">
+
+                <div style="width:220px; position:absolute; top:0px; left:0px; font-size:small !important; color:#FFFFFF !important; z-index:999 !important"
+                    class="lefttab">
+                    <div id="forexscr" class="screener">
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+                            <script type="text/javascript"
+                                src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js"
+                                async>
+                            {
+                                "width": "220",
+                                "height": 600,
+                                "defaultColumn": "overview",
+                                "defaultScreen": "general",
+                                "market": "forex",
+                                "showToolbar": false,
+                                "colorTheme": "dark",
+                                "transparency": false,
+                                "locale": "en"
+                            }
+                            </script>
+                        </div>
+                        <!-- TradingView Widget END -->
+                    </div>
+                    <div id="cryptoscr" class="screener hidden">
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+
+                            <script type="text/javascript"
+                                src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js"
+                                async>
+                            {
+                                "width": "220",
+                                "height": 600,
+                                "defaultColumn": "overview",
+                                "defaultScreen": "general",
+                                "market": "crypto",
+                                "showToolbar": false,
+                                "colorTheme": "dark",
+                                "transparency": false,
+                                "locale": "en"
+                            }
+                            </script>
+                        </div>
+                        <!-- TradingView Widget END -->
+                    </div>
+                    <div id="stockscr" class="screener hidden">
+                        <!-- TradingView Widget BEGIN -->
+                        <div class="tradingview-widget-container">
+                            <div class="tradingview-widget-container__widget"></div>
+
+                            <script type="text/javascript"
+                                src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js"
+                                async>
+                            {
+                                "width": "220",
+                                "height": 600,
+                                "defaultColumn": "overview",
+                                "defaultScreen": "most_capitalized",
+                                "market": "america",
+                                "showToolbar": false,
+                                "colorTheme": "dark",
+                                "transparency": false,
+                                "locale": "en"
+                            }
+                            </script>
+                        </div>
+                        <!-- TradingView Widget END -->
+                    </div>
+                </div>
+
+                <div class="trading-iframe" id="trading" style="min-height:600px !important; height:600px">
+                    <!-- TradingView Widget BEGIN -->
+                    <div class="tradingview-widget-container">
+                        <div id="tradingview_eeb1c"
+                            style="min-height:600px !important; height:600px; width:100%"></div>
+
+                        <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+                        <script type="text/javascript">
+                        new TradingView.widget({
+                            "autosize": true,
+                            "symbol": "OANDA:EURUSD",
+                            "interval": "1",
+                            "timezone": "Etc/UTC",
+                            "theme": "Dark",
+                            "style": "1",
+                            "locale": "en",
+                            "toolbar_bg": "#f1f3f6",
+                            "enable_publishing": false,
+                            "withdateranges": true,
+                            "hide_side_toolbar": false,
+                            "allow_symbol_change": true,
+                            "studies": [
+                                "BB@tv-basicstudies",
+                                "MASimple@tv-basicstudies",
+                                "RSI@tv-basicstudies"
+                            ],
+                            "container_id": "tradingview_eeb1c"
+                        });
+                        </script>
+                    </div>
+
+
+                </div>
+                <div class="clearfix" style="display: none;"></div>
+
+                <div style="width:250px; position:absolute; top:0; right:0px;" class="righttab">
+                    <div style="width:200px; !important; margin:0 auto; color:#FFFFFF">
+                        <div class="line"></div>
+                        <div class="rightcontent left">
+                            <label>
+                                <!-- react-text: 95 -->Option type:
+                                <!-- /react-text --><span title="Select option type" class="ask">?</span>
+                            </label>
+                            <div class="category ui option-select selection dropdown" tabindex="0">
+                                <input type="hidden" value=""><i class="dropdown icon" tabindex="0">
+                                    <div class="menu" tabindex="-1"></div>
+                                </i>
+                                <div class="default text">Turbo</div>
+                                <div class="menu" tabindex="-1"><a href="#" class="item">Turbo</a><a href="#"
+                                        class="item">Intraday</a><a href="#" class="item">Long term</a></div>
+                            </div>
+
+                            <div class="line"></div>
+
+                            <label>Platform Time: <span id="clockbox"></span></label>
+                            <div class="line"></div>
+                            <label>
+                                <!-- react-text: 107 -->Expiration Time:
+                                <!-- /react-text --><span
+                                    title="'Time' represents duration of the option. In case of Fixed time mode, option 'Time' is the difference between the time when you enter to the market purchase the option, and option expiration time. If fixed time is switched off, 'Time' represents the difference between the time when option becomes available to purchase it on the market and option expiration time."
+                                    class="ask">?</span><time style="float: right; color:#FF0000"
+                                    id="time"></time>
+                            </label>
+                            <div class="category ui time-select selection dropdown" tabindex="0"><input
+                                    type="hidden" value=""><i class="dropdown icon" tabindex="0">
+                                    <div class="menu" tabindex="-1"></div>
+                                </i>
+                                <div class="default text">1min</div>
+                                <div class="menu" tabindex="-1">
+                                    <div class="item" onclick="expTime('01')">1min</div>
+                                    <div class="item" onclick="expTime('02')">2min</div>
+                                    <div class="item" onclick="expTime('03')">3min</div>
+                                    <div class="item" onclick="expTime('04')">4min</div>
+                                    <div class="item" onclick="expTime('05')">5min</div>
+                                    <div class="item" onclick="expTime('06')">6min</div>
+                                    <div class="item" onclick="expTime('07')">7min</div>
+                                    <div class="item" onclick="expTime('08')">8min</div>
+                                    <div class="item" onclick="expTime('09')">9min</div>
+                                    <div class="item" onclick="expTime('10')">10min</div>
+                                    <div class="item" onclick="expTime('11')">11min</div>
+                                    <div class="item" onclick="expTime('12')">12min</div>
+                                    <div class="item" onclick="expTime('13')">13min</div>
+                                    <div class="item" onclick="expTime('14')">14min</div>
+                                    <div class="item" onclick="expTime('15')">15min</div>
+                                    <div class="item" onclick="expTime('16')">16min</div>
+                                    <div class="item" onclick="expTime('17')">17min</div>
+                                    <div class="item" onclick="expTime('18')">18min</div>
+                                    <div class="item" onclick="expTime('19')">19min</div>
+                                    <div class="item" onclick="expTime('20')">20min</div>
+                                    <div class="item" onclick="expTime('21')">21min</div>
+                                    <div class="item" onclick="expTime('22')">22min</div>
+                                    <div class="item" onclick="expTime('23')">23min</div>
+                                    <div class="item" onclick="expTime('24')">24min</div>
+                                    <div class="item" onclick="expTime('25')">25min</div>
+                                    <div class="item" onclick="expTime('26')">26min</div>
+                                    <div class="item" onclick="expTime('27')">27min</div>
+                                    <div class="item" onclick="expTime('28')">28min</div>
+                                    <div class="item" onclick="expTime('29')">29min</div>
+                                    <div class="item" onclick="expTime('30')">30min</div>
+                                </div>
+                            </div>
+
+
+                            <div class="line"></div>
+
+                            <label>
+                                <!-- react-text: 117 -->Fixed time:
+                                <!-- /react-text --><span
+                                    title="'Time' represents duration of the option. In case of Fixed time mode, option 'Time' is the difference between the time when you enter to the market purchase the option, and option expiration time. If fixed time is switched off, 'Time' represents the difference between the time when option becomes available to purchase it on the market and option expiration time."
+                                    class="ask"></span>
+                                <div class="theme-switcher"><input type="checkbox" id="theme-switcher"
+                                        value="on"><label for="theme-switcher"><i></i></label></div>
+                            </label>
+
+                            <div class="line"></div>
+
+                            <label>
+                                <!-- react-text: 125 -->Amount:
+                                <!-- /react-text --><span
+                                    title="Trade amount in base currency of the trading account."
+                                    class="ask"></span>
+                            </label>
+                            <div class="input-number-box"><input type="text" value="10.00" id="amount"
+                                    class="input-number amount-input">
+                                <div class="input-number-more"></div>
+                                <div class="input-number-less"></div>
+                            </div>
+
+                            <div class="line"></div>
+
+                        </div>
+
+                        <div class="line"></div>
+
+                        <div class="rightcontent right">
+                            <button class="ui button primal green"
+                                style="height:50px; width:200px; margin-bottom:10px"
+                                onclick="call()">Call</button>
+                            <input type="text" value="" style="margin-bottom:10px; width:200px;" readonly=""
+                                id="percent" />
+                            <button class="ui button primal red"
+                                style="height:50px; width:200px; margin:0 auto;" onclick="call()">Put</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <!-- <div class="clarfix"></div> -->
+        </div>
+
+        <div class="clarfix"></div>
+        <section>
+            <div style="clear:both"></div>
+            <div>
+                                        <div class="table" style="overflow-y:auto;">
+
+
+                    <table class="" style=" min-width:600px;">
+                        <!-- <center>
+                            <h2>Trading History</h2>
+                        </center> -->
+                                                        <div class="table-responsive">
+                            <!-- <h5>You have not make any trading yet</h5><br> -->
+                            <p>All your trading history will appear here.</p>
+                        </div>
+                        
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+<!-- SOMEONE JUST EARN -->
+<!-- <div class="mgm" style="display: none;">
+    <div class="txt" style="color:black;">Someone from <b></b> just earned <a href="javascript:void(0);"
+            onclick="javascript:void(0);"></a></div>
+</div>
+
+<style>
+.mgm {
+    border-radius: 7px;
+    position: fixed;
+    z-index: 90;
+    bottom: 80px;
+    right: 50px;
+    background: #00FFE2;
+    padding: 20px 27px;
+    box-shadow: 0px 5px 13px 0px rgba(0, 0, 0, .3);
+}
+
+.mgm a {
+    font-weight: 700;
+    display: block;
+    color: #f2d516;
+}
+
+.mgm a,
+.mgm a:active {
+    transition: all .2s ease;
+    color: #f2d516;
+}
+</style>
+<script data-cfasync="false" src="cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.html"></script>
+<script type="text/javascript">
+var listCountries = ['Argentina', 'USA', 'Germany', 'France', 'Italy', 'South Korea', 'Australia', 'Norway',
+    'Canada', 'Argentina', 'Saudi Arabia', 'Mexico', 'Spain', 'Austria', 'Venezuela', 'South Africa',
+    'Sweden', 'South Korea', 'China', 'Italy', 'Germany', 'United Kingdom', 'Bahrain', 'Greece', 'Cuba',
+    'Bulgaria', 'Portugal', 'Austria', 'Cyprus', 'Panama', 'Asia', 'Norway', 'Netherlands', 'Switzerland',
+    'Belgium', 'Israel', 'Cyprus', 'Spain', 'Norway'
+];
+var listPlans = ['$2000', '$1000', '$50000', '$15000', '$10000', '$100000', '$20000', '$1500', '$30000',
+    '$40000', '$1200', '$60000', '$3400', '$7000', '$25000', '$25000', '$35000', '$5000', '$7000', '$45000',
+    '$3500', '$5000', '$12500', '$9500'
+];
+interval = Math.floor(Math.random() * (40000 - 8000 + 1) + 8000);
+var run = setInterval(request, interval);
+
+function request() {
+    clearInterval(run);
+    interval = Math.floor(Math.random() * (40000 - 8000 + 1) + 8000);
+    var country = listCountries[Math.floor(Math.random() * listCountries.length)];
+    var plan = listPlans[Math.floor(Math.random() * listPlans.length)];
+    var msg = 'Someone from <b>' + country +
+        '</b> just earned  <a href="javascript:void(0);" onclick="javascript:void(0);">' + plan + ' .</a>';
+    $(".mgm .txt").html(msg);
+    $(".mgm").stop(true).fadeIn(300);
+    window.setTimeout(function() {
+        $(".mgm").stop(true).fadeOut(300);
+    }, 6000);
+    run = setInterval(request, interval);
+}
+</script> -->
+
+
+
+<script type="text/javascript">
+(function() {
+    var options = {
+        whatsapp: "+", // WhatsApp number
+        call_to_action: "Message us", // Call to action
+        position: "left", // Position may be 'right' or 'left'
+    };
+    var proto = document.location.protocol,
+        host = "getbutton.io",
+        url = proto + "//static." + host;
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = url + '/widget-send-button/js/init.js';
+    s.onload = function() {
+        WhWidgetSendButton.init(host, proto, options);
+    };
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+})();
+</script>
+
+<script>
+var forexscr = document.getElementById('forrxscr');
+var cryptoscr = document.getElementById('cryptoscr');
+var stockscr = document.getElementById('stockscr');
+var screener = document.getElementsByClassName('screener');
+
+function showed(id) {
+    var shown = document.getElementById(id);
+    screener[0].classList.add('hidden');
+    screener[1].classList.add('hidden');
+    screener[2].classList.add('hidden');
+    shown.classList.remove('hidden');
+
+}
+</script>
+<script>
+var lefttab = document.getElementsByClassName('lefttab');
+var lefttabnav = document.getElementsByClassName('lefttabnav');
+var tabdiv = document.getElementsByClassName('tabdiv');
+var trading = document.getElementById('trading');
+var wallet = document.getElementsByClassName('walletdrop');
+
+function showtab() {
+    if (lefttab[0].style.display === "block") {
+        lefttab[0].style =
+            "display:none; z-index:9999 !important; position:absolute; top: 40px;left: 0px; width:220px !important;";
+        lefttab[1].style = "display:none; position:absolute;  z-index:999 !important; top:0px; left:0px;";
+        lefttabnav[0].style = "margin-left:10px";
+        tabdiv[0].style = "position:absolute; left:0; top:0px; width:220px; height:60px";
+        trading.style = "margin:0; min-height:600px !important; margin-left:0px;";
+        wallet[0].style = "display:block;width:250px; z-index:99";
+    } else {
+        lefttab[0].style =
+            "display:block; z-index:9999 !important; position:absolute; top: 40px;left: 0px; width:220px !important;";
+        lefttab[1].style = "display:block; position:absolute;  z-index:999 !important; top:0px; left:0px;";
+        lefttabnav[0].style = "margin-left:230px";
+        tabdiv[0].style = "position:absolute; left:0; top:0px; width:220px; height:60px";
+        trading.style = "margin-left:220px; margin-right:0; min-height:600px !important";
+        wallet[0].style = "display:none;width:250px; z-index:99";
+    }
+}
+</script>
+
+
+
+<script>
+function expTime(iddd) {
+    var expiration = iddd;
+
+    var nday = d.getDay(),
+        nmonth = d.getMonth(),
+        ndate = d.getDate();
+    var nhour = d.getHours(),
+        nmin = d.getMinutes(),
+        ap, nsec = d.getSeconds();
+
+
+    if (nhour <= 9) nhour = "0" + nhour;
+    if (nmin <= 9) nmin = "0" + nmin;
+    if (nsec <= 9) nsec = "0" + nsec;
+    var nminutes = Number(nmin) + Number(expiration);
+    if (nminutes > 60) {
+        var excess = Number(nminutes) - 60;
+
+        var nhours = Number(nhour) + 01;
+        if (excess <= 9) excess = "0" + excess;
+        if (nhours <= 9) nhours = "0" + nhours;
+        document.getElementById('time').innerHTML = "<i class='fa fa-clock-o'></i>&nbsp;" + nhours + ":" +
+            excess;
+    } else {
+        if (nminutes <= 9) nminutes = "0" + nminutes;
+        document.getElementById('time').innerHTML = "<i class='fa fa-clock-o'></i>&nbsp;" + nhour + ":" +
+            nminutes;
+    }
+}
+</script>
+<script>
+var pip = ((Math.random() * 1) + 8.3);
+document.getElementById("profit").innerHTML = "+" + pip.toFixed(2);
+document.getElementById("percent").value = (pip * 10).toFixed(1) + "% +" + (pip / 10).toFixed(1);
+</script>
+
+<script>
+var amount = document.getElementById('amount');
+amount.onkeyup = function() {
+    var percent = document.getElementById('percent').value;
+    if (amount.value <= 0) {
+        document.getElementById('profit').innerHTML = "+NaN";
+    } else document.getElementById('profit').innerHTML = "+" + (amount.value * (pip / 10)).toFixed(2);
+}
+
+function call() {
+    if (amount.value <= 0) {
+        alert('Amount is invalid');
+    } else if (amount.value > balance) {
+        alert('Amount placed');
+    } else {
+        alert('Your trading account is already in session');
+    }
+}
+</script>
+
+<footer class="footer">
+    <div class="row clearfix">
+
+
+        <div class="float-left">
+            <noindex>
+                <!--googleoff: all-->
+                <span class="copy">&copy; 2022 <span>247premierdigitals Ltd .</span></span> <a href="#"
+                    target="_blank">Terms</a> | <a href="#" target="_blank">Privacy policy</a>
+                <!--googleon: all-->
+            </noindex>
+        </div>
+        <div class="float-right">
+            <ul class="soc-list">
+                <li>
+
+                </li>
+                <li>Follow us</li>
+                <li>
+                    <div class="footer-media">
+                        <div class="media-icons">
+                            <a href=""><span class="fa fa-facebook"></span></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="footer-media">
+                        <div class="media-icons">
+                            <a href=""><span class="round fa fa-instagram"></span></a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="footer-media">
+                        <div class="media-icons">
+                            <a href=""><span class="fa fa-twitter"></span></a>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+</footer>
+</div>
+<!--sidebar-->
+
+
+
+

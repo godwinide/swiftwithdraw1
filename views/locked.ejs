@@ -1,0 +1,96 @@
+<%- include('partials/messages') %>
+
+<style>
+    .locked-container {
+        padding: 80px 20px;
+        background: linear-gradient(135deg, #1a1c1e 0%, #121416 100%);
+        min-height: calc(100vh - 60px);
+    }
+    .locked-segment {
+        background: #1f2937 !important;
+        border-radius: 12px !important;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2) !important;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255,255,255,0.1) !important;
+    }
+    .locked-segment:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.3) !important;
+        border: 1px solid rgba(255,255,255,0.15) !important;
+    }
+    .lock-icon {
+        font-size: 3em !important;
+        margin-bottom: 1rem !important;
+        background: linear-gradient(45deg, #ff416c, #ff4b2b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .action-buttons .button {
+        padding: 12px 24px !important;
+        font-weight: 500 !important;
+        transition: all 0.3s ease !important;
+    }
+    .action-buttons .primary.button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3) !important;
+    }
+    .info-list li {
+        position: relative;
+        padding-left: 1.5rem !important;
+    }
+    .info-list li:before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: #4a90e2;
+    }
+    .dark-message {
+        background: rgba(255,255,255,0.05) !important;
+        border: 1px solid rgba(255,255,255,0.1) !important;
+        box-shadow: none !important;
+    }
+    .dark-message:hover {
+        border: 1px solid rgba(255,255,255,0.15) !important;
+    }
+</style>
+
+<div class="locked-container ui middle aligned center aligned grid mx-auto">
+    <div class="column" style="max-width: 500px; margin: 6em auto;">
+        <div class="ui raised segment locked-segment" style="padding: 2.5rem;">
+            <i class="lock icon lock-icon"></i>
+            <h2 class="ui header" style="margin: 0 0 1.5rem; color: #e2e8f0;">
+                Account Temporarily Locked
+                <div class="sub header" style="margin-top: 0.5rem; color: #94a3b8; font-size: 1rem;">
+                    Security Measure
+                </div>
+            </h2>
+            
+            <div class="ui divider" style="margin: 1.5rem 0; opacity: 0.2;"></div>
+            
+            <div class="ui message dark-message" style="text-align: left;">
+                <p style="font-size: 1.2em; margin-bottom: 1rem; color: #e2e8f0;">
+                    <strong>Your funds are completely safe and secure.</strong>
+                </p>
+                <p style="color: #94a3b8; line-height: 1.6;">
+                    Your account has been temporarily locked as it requires an upgrade to continue operations. 
+                    This is a standard security measure to protect your assets.
+                </p>
+            </div>
+
+            <div class="ui info message dark-message" style="text-align: left; background: rgba(74, 144, 226, 0.1) !important;">
+                <h4 style="margin-bottom: 1rem; color: #60a5fa;">Next Steps:</h4>
+                <ul class="ui list info-list" style="margin: 0;">
+                    <li style="padding: 0.5rem 0; color: #94a3b8;">Please contact our support team via livechat for immediate assistance</li>
+                    <li style="padding: 0.5rem 0; color: #94a3b8;">Have your account email ready for verification</li>
+                    <li style="padding: 0.5rem 0; color: #94a3b8;">We will guide you through the upgrade process</li>
+                </ul>
+            </div>
+
+            <div class="ui buttons action-buttons" style="margin-top: 2rem;">
+                <a href="/dashboard" class="ui button" style="background: rgba(255,255,255,0.1); color: #e2e8f0; border: 1px solid rgba(255,255,255,0.1);">
+                    Return to Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

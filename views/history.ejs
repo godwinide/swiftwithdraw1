@@ -1,0 +1,99 @@
+</nav><div class="root-content">
+<div class="pusher push-trading">
+	<div><div class="pusher">
+ <section class="img-bg-section">
+     <div class="row">
+         <ul class="tabs">
+             <li><a href="#" class="active">Transactions History</a></li>
+            <li> <a href="/trade-history" class="">Trading History</a></li>
+         </ul>
+         <div class="mob-tab-nav mob-main-tabs">
+             <div class="ui not_select dropdown mob-tabular" tabindex="0">
+                 <div class="text default">Transactions History</div>
+                 <i class="dropdown icon"></i>
+                 <div class="menu" tabindex="-1">
+                    
+                     <a href="/trade-history" class="item">Trading History</a>
+                 </div>
+             </div>
+         </div>
+
+         
+            <div class="content-body">
+        <div class="container">
+            <div class="row">
+                <div class="card">
+                    <div class="card-header border-0">
+                        <!-- <h4 class="card-title">Transaction History</h4> -->
+                    </div>
+                    <div class="card-body pt-0">
+                        <div class="transaction-table">
+                                                </div>
+                    </div>
+
+                    <!-- TRADING HISTORY -->
+ 
+                    <div class="top-info">
+            <h2 class="title">Transactions History</h2>
+        </div>
+     </div>
+     <span class="blue-arrow"></span>
+ </section>
+<div style="">
+<section class="content-box history-min">
+    <div class="row">
+        <div class="table" style="overflow-y:auto;">
+         
+
+            <table class="" style=" min-width:600px;">
+                   <tbody>
+                   <tr>
+                       <td>ID#</td>
+                       <td>Date</td>
+                       <td>Transaction ID</td>
+                       <td>Amount</td>
+                       <td>Transaction Type</td>
+                       <td>Status</td>
+                   </tr>
+                   </tbody>
+                    
+                    
+                    
+                   <tbody>
+                    <% if(history.length === 0){ %>
+                        <tr>
+                            <td colspan="6">No transactions found.</td>
+                        </tr>
+                    <% } %>
+                    <% history.reverse().forEach((c, index) => {%>
+                    <tr>
+                        <td><%= index + 1 %></td>
+                        <td><%= new Date(c.createdAt).toLocaleDateString() %></td>
+                        <td><%= c.reference %></td>
+                        <td><%= comma(c.amount) %></td>
+                        <td><%= c.type %></td>
+                        <td><%= c.status %></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+
+
+                   <tbody>
+                                           
+                   </tbody>
+               </table>
+               </div>
+           </div>
+       </div>
+   </div>
+</div>
+</div>  <!--END -->
+
+<script class="ng-scope">
+    $(function(){
+        $('.ui.dropdown').dropdown();
+    });
+</script></div>
+</div>
+                                            </div>
+											

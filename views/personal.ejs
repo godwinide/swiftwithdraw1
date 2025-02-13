@@ -1,0 +1,479 @@
+
+
+<!DOCTYPE html>
+<html style=""><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>           Personal Data   </title>
+<meta name="description" content="            
+    ">
+
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/img/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/img/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="assets/img/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="assets/img/favicons/apple-touch-icon-152x152.png">
+<link rel="icon" type="image/png" href="assets/img/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="assets/img/favicons/favicon-16x16.png" sizes="16x16">
+
+            <link rel="canonical" href="/dashboard">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+
+        <link href="assets/css/css.css" rel="stylesheet" type="text/css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="assets/css/inner.css">
+<link rel="stylesheet" type="text/css" href="assets/css/app.css">
+<link rel="stylesheet" type="text/css" href="assets/css/cs.css">
+    <script src="https://use.fontawesome.com/4b789087e7.js"></script> 
+<style>
+.divider{
+border-bottom: 1px dotted;
+}
+.blinking{
+	animation:blinkingText 2s infinite;
+}
+@keyframes blinkingText{
+	0%{		color: #f00;	}
+	49%{	color: #600;	}
+	50%{	color: #c00;	}
+	99%{	color:#e00;	}
+	100%{	color: #f00;	}
+}
+.blinkgreen{
+	animation:blinkgreenText 2s infinite;
+}
+@keyframes blinkgreenText{
+	0%{		color: #0f0;	}
+	49%{	color: #060;	}
+	50%{	color: #0c0;	}
+	99%{	color:#0e0;	}
+	100%{	color: #0f0;	}
+}
+</style>
+<SCRIPT type="text/javascript">
+				var tday=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+				var tmonth=new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+
+				function GetClock(){
+				 tzOffset = 0;//set this to the number of hours offset from UTC
+
+				 d=new Date();
+				 dx=d.toGMTString();
+				dx=dx.substr(0,dx.length -3);
+				d.setTime(Date.parse(dx))
+				d.setHours(d.getHours()+tzOffset);
+				var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate();
+				var nhour=d.getHours(),nmin=d.getMinutes(),ap,nsec=d.getSeconds();
+				
+				if(nhour<=9) nhour="0"+nhour;
+				if(nmin<=9) nmin="0"+nmin;
+				if(nsec<=9) nsec="0"+nsec;
+
+				document.getElementById('clockbox').innerHTML="<i class='fa fa-clock-o'></i>&nbsp;"+nhour+":"+nmin+":"+nsec;
+				var nminutes = Number(nmin) + 01;
+				if(nminutes<=9) nminutes="0"+nminutes;
+				time = "<i class='fa fa-clock-o'></i>&nbsp;"+nhour+":"+nminutes;
+				
+				}
+
+				window.onload=function(){
+				GetClock();
+				setInterval(GetClock,1000);
+				document.getElementById('time').innerHTML=time;
+				}
+				</SCRIPT>
+</head>
+<body class="pushable  dimmable scrolling" style=""><div class="ui sidebar right inverted vertical menu" aria-hidden="false">
+<div class="item" style="font-size:small; color:#FFFFFF; position:absolute; top:15px; text-transform:capitalize">
+ <span><i class="fa fa-envelope-o"></i>godwinide@gmail.com</span><br>
+								<span style="margin-top:10px;"><b><i class="fa fa-money"></i> 0.00</b> <b>USD</b></span>
+								<br>
+								
+								</div>
+                                
+								<span class="divider"></span>
+    <div class="item"><a href="/dashboard"><i class="fa fa-dashboard"></i> Trading</a></div>
+	<span class="divider"></span>
+	<div class="item"><a href="/funding"><i class="fa fa-money"></i> Account funding</a></div>
+	<div class="item"><a href="/withdrawal"><i class="fa fa-money"></i> Withdrawals</a></div>
+    <span class="divider"></span>
+    <div class="item"><a href="/history"><i class="fa fa-history"></i> Transactions history</a></div>
+	<div class="item"><a href="/trade-history"><i class="fa fa-area-chart"></i> Trading history</a></div>	
+    <span class="divider"></span>
+    <div class="item"><a href="/personal"><i class="fa fa-user"></i> Personal Data</a></div>
+	<div class="item"><a href="/security"><i class="fa fa-lock"></i> Security settings</a></div>
+    <span class="divider"></span>
+    <span class="divider"></span>
+    <div class="item"><a href="/logout"><i class="fa fa-power-off"></i> Exit</a></div>
+</div>
+
+    <div class="pusher" aria-hidden="false">
+<nav class="top-nav inner inner-new">
+	
+	<div class="top-bar">
+            <div class="head-row clearfix">
+                <div class="float-left ">
+                    
+                    <div class="logosm">
+            			<a href="/dashboard"><img src="/assets/img/logo.png" alt=" 247premierdigitals"></a>
+        			</div>
+                    <!--<a href="" class="top-bar-nav dinb"><i class="help-open"></i> <span>Support</span></a>-->
+                 
+                    <div class="ui item dropdown dropdown-call dinb" tabindex="0">
+                    	<div class="top-bar-nav">
+                        	<div class="phone-open"></div>
+                        	<span>Call back</span>
+                        </div>
+                        <div class="menu transition hidden" tabindex="-1">
+                          <div class="item">
+                              <div class="phone-notice">Please input your phone number with<br>country code and we will immediately contact you.</div>
+                              <div>+<input class="call-input" placeholder="phone" type="text" maxlength="20" force-integer="" id="callback" style="width:200px"><button class="button ui green-bm" id="call_btn" onClick="callBack()">Call back</button></div>
+                          </div>
+                        </div>
+                    </div>
+					 <script>
+   function callBack(){
+   	var callback = document.getElementById("callback").value;
+	document.getElementById("call_btn").innerHTML="<img src='assets/img/ajax-load.gif' height='16' width='16' />";
+	if(callback == "")
+			alert("No phone number entered !");
+			document.getElementById("call_btn").innerHTML="Call Back";
+		} 
+		else if(callback.length < 10){
+			alert("Invalid phone number!");
+			document.getElementById("call_btn").innerHTML="Call Back";
+		} 
+		else if(!/^[0-9]+[-\s]?[0-9]+[-\s]?[0-9]+$/.test(callback)){
+			alert("Inavlid phone number!");
+			
+			document.getElementById("call_btn").innerHTML="Call Back";
+		} 
+		else{
+			{
+			alert("Thank You, we will get in touch with you shortly");
+			document.getElementById("call_btn").innerHTML="Call Back";
+		} 
+		}
+   }
+   </script> 
+                   <a href="tel:+19206983343" ng-show="geo != 'US'" class="top-phone dinb" aria-hidden="false"><i class="fa fa-phone"></i></a>
+                    <a href="tel:+19206983343" ng-show="geo == 'US'" class="top-phone dinb ng-hide" aria-hidden="true"><i class="fa fa-phone"></i></a>
+					<a target='blank' href='https://api.whatsapp.com/send?phone=+19206983343&text=247premierdigitals' style="color:#fff" class="top-phone dinb"><i class="fa fa-whatsapp"></i></a>
+                </div>
+                
+                <span class="menu-toggle float-right"><i></i></span>
+                
+                <div class="float-right nav smcapy-nav">
+		        	
+		        	<div class="ui item lang pointing dropdown" tabindex="0">
+    <input type="hidden" name="lang">
+    <div class="default text">
+	<div id="google_translate_element" class="google-trans"></div>
+                                <script type="text/javascript">
+                                    function googleTranslateElementInit() {
+                                        new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+                                    }
+                                </script>
+                                <script type="text/javascript" src="translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	</div>
+    <i class="dropdown icon"></i>
+    
+</div>
+
+		        	
+		        	
+		            <div class="item"><a class="ui button op link a-green-hover" href="/logout"><i class="fa fa-power-off"></i> Exit</a></div>
+		            <div class="item"><a class="ui button op round green-bm nobold" href="/funding"><i class="fa fa-money"></i> Account funding</a></div>
+		        </div>
+		        
+            </div>
+    </div>
+    
+    <div class="top-line clearfix">
+        <div class="row-30">
+            <ul class="icon-nav">
+                <li class="active"><a target="_blank" title="Charting tools" class="technic" href="#" style="color:#FFFFFF"><i class="fa fa-bar-chart"></i></a></li>
+                <li class="active"><a title="Fundamental analysis" class="fundament" href="#" target="_blank" style="color:#FFFFFF"><i class="fa fa-pie-chart"></i></a></li>
+               
+                <li class="active"><a title="News" class="expert" href="#" target="_blank"  style="color:#FFFFFF"><i class="fa fa-tv"></i></a></li>
+                <li class="active"><a title="Technical Analysis" class="ideas" href="#" target="_blank"  style="color:#FFFFFF"><i class="fa fa-signal"></i></a></li>
+                <li class="active"><a title="Economic calendar" class="calendar" href="#" target="_blank" style="color:#FFFFFF"><i class="fa fa-calendar"></i></a></li>
+              
+                
+            </ul>
+        </div>
+        
+        <div class="row-30 ">
+        	<div class="navsm text-xs-right">
+	        	<div class="ui item top-drop-in-css">
+	            	<a href="/dashboard"><i class="fa fa-dashboard"></i> Trading</a>
+	            </div>
+	            <div class="ui item top-drop-in-css">
+	            	<a href="javascript:;"><i class="fa fa-money"></i> Account</a>
+	            	<div class="menu">
+				      <div class="item"><a href="/funding"><i class="fa fa-money"></i> Account funding</a></div>
+				      <div class="item"><a href="/withdrawal"><i class="fa fa-money"></i> Withdrawals</a></div>
+				      
+				    </div>
+	            </div>
+	            <div class="ui item top-drop-in-css">
+	            	<a href="javascript:;"><i class="fa fa-list"></i> Statements</a>
+	            	<div class="menu">
+				      <div class="item"><a href="/history"><i class="fa fa-history"></i> Transactions history</a></div>
+				      <div class="item"><a href="/trade-history"><i class="fa fa-area-chart"></i> Trading history</a></div>
+				    </div>	
+	            </div>
+	            <div class="ui item top-drop-in-css">
+	            	<a href="javascript:;"><i class="fa fa-cogs"></i> Settings</a>
+	            	<div class="menu">
+				      <div class="item"><a href="/personal"><i class="fa fa-user"></i> Personal Data</a></div>
+				      <div class="item"><a href="/security"><i class="fa fa-lock"></i> Security settings</a></div>
+				    </div>
+	            </div>
+	            <div class="ui item top-drop-in-css">
+	            </div>
+	        </div>
+        </div>
+       
+        <div class="time row-30 top-line-last-row-max">
+            <div class="right">
+              <a href="javascript:void(Tawk_API.toggle())" style="color:#FFFFFF">
+                <i class="fa fa-comment"></i>
+              </a>
+            </div>
+        </div>
+    </div>
+         <h2 class="title">Account Data</h2>
+     </div>
+     <span class="blue-arrow"></span>
+ </section> <br>
+
+ <h2 class="title">Account Data</h2>
+ <div style=""><section class="content-box verification-new">
+    <div class="row">
+        <div class="form-row account-data">
+            <form class="line" name="personal" method="post" action="">
+			<div class="line"></div>
+            <label for="Title"></label>
+            <div class="line ui disabled input">
+                    <input type="email" placeholder="E-mail"  disabled="disabled" value="<%= req.user.title %>">
+                </div>
+                <label for="Fullname"></label>
+                <div class="line ui disabled input">
+                    <input type="text" placeholder="Name" disabled="disabled"  value="<%= req.user.firstname + ' ' + req.user.lastname%>">
+                </div>
+                <label for="Email Address"></label>
+                <div class="line ui disabled input">
+                    <input type="email" placeholder="E-mail"  disabled="disabled" value="<%= req.user.email %>">
+                </div>
+                <label for="Phone Number"></label>
+                <div class="line ui disabled input">
+                    <input type="tel" placeholder="Phone number" readonly="" name="phone" value="<%= req.user.phone %>">
+                </div>
+                <label for="Account Type"></label>
+                <div class="line ui disabled input">
+                    <input type="email" placeholder="E-mail"  disabled="disabled" value="<%= req.user.email %>">
+                </div>
+                <label for="Country"></label>
+                
+								<div class="line ui disabled input">
+                    <input type="text" placeholder="Country"  readonly=""  name="country" value="United States">
+					                </div>
+                <div class="line clearfix">
+                    
+                </div>
+            </form>
+        </div>
+    </div>
+    
+            <!-- ///////////////////////////////////// -->
+
+
+            
+
+            <h2 class="title personal">KYC Verification</h2>
+<center><span class="ui button red">Required <i class="fa-solid fa-ban"></i></span>
+</center><br />
+  
+
+<center>
+<form action="#" method="post" enctype="multipart/form-data">
+<label class="form-label">Upload your KYC Document, <br>
+N/B: File must be image</label><br>
+  <input type="file" id="myFile" name="image" value="" required="">
+  
+<br><br>
+<span class="ui button green">
+    <button class="ui button green" type="button"
+    name="submit">Upload</button>
+
+                                </span>
+   
+</form>
+</center>
+ <style>
+  .confi {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.confi input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.confi:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.confi input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.confi input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.confi .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+ /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+} 
+ </style>
+ <script class="ng-scope">
+    $(function(){
+        $('.ui.dropdown').dropdown();
+    });
+</script>
+
+<script
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+} 
+
+
+
+var myfile = document.getElementById('file');
+var upload_btn = document.getElementById('upload_btn');
+ myfile.onchange = function() {
+        var file = this.files[0];
+        var imagefile = file.type;
+        var match= ["image/jpeg","image/png","image/jpg"];
+        if(!((imagefile==match[0]) || (imagefile==match[1]) || (imagefile==match[2]))){
+            alert('Please select a valid image file (jpeg/jpg/png).');
+            file = '';
+			upload_btn.setAttribute("disabled", "disabled");
+            return false;
+        }
+		else{
+			 document.getElementById('showfile').innerHTML = file.name;
+			 upload_btn.removeAttribute("disabled");
+		}
+    }
+
+</script>
+</div>
+</div>
+                                            </div>

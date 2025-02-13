@@ -1,0 +1,563 @@
+<div class="root-content">
+    <div class="pusher push-trading">
+        <div>
+            <div class="pusher pusher-min-400">
+                <section class="img-bg-section">
+                    <div class="row">
+                        <ul class="tabs">
+                            <li><a href="#" class="active">Account Funding</a></li>
+                            <li><a href="/withdrawal">Withdrawals</a></li>
+
+                        </ul>
+                        <div class="mob-tab-nav mob-main-tabs">
+                            <div class="ui not_select dropdown mob-tabular" tabindex="0">
+                                <div class="text default">Account Funding</div>
+                                <i class="dropdown icon"></i>
+                                <div class="menu" tabindex="-1">
+                                    <a href="/withdrawal" class="item">Withdrawals</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top-info">
+                            <h2 class="title">Account Funding</h2>
+                        </div>
+                    </div>
+                    <span class="blue-arrow"></span>
+                </section>
+                <div style="">
+                    <section class="content-box">
+                        <div class="row">
+                            <div class="account-funding">
+
+
+
+                                <div class="wallet-drop-func" data-ng-func="">
+                                    <div class="ui dropdown amount-dropdown" tabindex="0">
+
+                                        <div class="text">
+                                            <div class="amount-item">
+
+                                                <div class="amount-val"><b><%= comma(req.user.balance)%></b> <b
+                                                        ng-bind="w.currency"
+                                                        class="ng-binding"><%= req.user.currency %></b>
+                                                </div>
+                                                <span class="amount-net">Net Balance:
+                                                    <b><%= comma(req.user.balance)%></b> <b
+                                                        ng-bind="w.currency"
+                                                        class="ng-binding"><%= req.user.currency %></b></span>
+                                            </div>
+                                        </div>
+                                        <i class="dropdown icon" tabindex="0">
+                                            <div class="menu" tabindex="-1"></div>
+                                        </i>
+                                        <div class="menu" tabindex="-1">
+                                            <!-- ngRepeat: w in info.balances -->
+                                            <div class="item active" role="button" tabindex="0" style="">
+                                                <div class="amount-item">
+                                                    <span class="amount-id">
+
+
+                                                        <div class="amount-val">
+                                                            <b><%= comma(req.user.balance)%></b>
+                                                            <b><%= req.user.currency %></b></div>
+                                                        <span class="amount-net">Net Balance:
+                                                            <b><%= comma(req.user.balance)%></b>
+                                                            <b><%= req.user.currency %></b></span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+                                <div class="funding-method-wrap">
+                                    <!-- <h2 class="title">Choose funding method</h2> -->
+
+                                    <div>
+                                        <!-- <div class="ui top attached tabular menu pay-tabs crypto-tabs">
+                <div class="item" data-tab="BTC" ng-click="fixedTab('BTC')" role="button" tabindex="0"><span class="tab-balance"><span class="crypt-curr ng-binding" ng-bind="exchange['BTC']">0</span> BTC</span><div class="balance-logo"><img src="assets/btc.png"></div></div>
+                <div class="item" data-tab="LTC" ng-click="fixedTab('LTC')" role="button" tabindex="0"><span class="tab-balance"><span class="crypt-curr ng-binding" ng-bind="exchange['LTC']">0</span> LTC</span><div class="balance-logo"><img src="assets/ltc.png"></div></div>
+                <div class="item" data-tab="ETH" ng-click="fixedTab('ETH')" role="button" tabindex="0"><span class="tab-balance"><span class="crypt-curr ng-binding" ng-bind="exchange['ETH']">0</span> ETH</span><div class="balance-logo"><img src="assets/eth.png"></div></div>
+                <div class="item" data-tab="DASH" ng-click="fixedTab('DASH')" role="button" tabindex="0"><span class="tab-balance"><span class="crypt-curr ng-binding" ng-bind="exchange['DASH']">0</span> DSH</span><div class="balance-logo"><img src="assets/dsh.png"></div></div>
+                
+                <div class="item" data-tab="ZEC" ng-click="fixedTab('ZEC')" role="button" tabindex="0"><span class="tab-balance"><span class="crypt-curr ng-binding" ng-bind="exchange['ZEC']">0</span> ZEC</span><div class="balance-logo"><img src="assets/zec.png"></div></div>
+                
+                <div class="item" data-tab="EUR" ng-click="fixedTab('EUR')" role="button" tabindex="0"><span class="tab-balance"><span class="crypt-curr ng-binding" ng-bind="exchange['EUR']">0</span> EUR</span><div class="balance-logo"><img src="assets/eur.png"></div></div>
+                <div class="item" data-tab="USD" ng-click="fixedTab('USD')" role="button" tabindex="0"><span class="tab-balance"><span class="crypt-curr ng-binding" ng-bind="exchange['USD']">0</span> USD</span><div class="balance-logo"><img src="assets/usdg.png"></div></div>
+                
+            </div>-->
+                                        <!--
+            <div class="mob-tab-nav tabular">
+                <div class="ui select dropdown mob-tabular" tabindex="0">
+                    <div class="text default">Bitcoin <b><b ng-bind="exchange['BTC']" class="ng-binding">0</b> BTC</b></div>
+                    <i class="dropdown icon"></i>
+                    <ul class="menu" tabindex="-1">
+                        <li class="item" data-tab="BTC" ng-click="fixedTab('BTC')" role="button" tabindex="0">Bitcoin <b><b ng-bind="exchange['BTC']" class="ng-binding">0</b> BTC</b></li>
+                        <li class="item" data-tab="LTC" ng-click="fixedTab('LTC')" role="button" tabindex="0">Litecoin <b class=""><b class="ng-binding" ng-bind="exchange['LTC']">0</b> LTC</b></li>
+                        <li class="item" data-tab="ETH" ng-click="fixedTab('ETH')" role="button" tabindex="0">Ethereum <b class=""><b class="ng-binding" ng-bind="exchange['ETH']">0</b> ETH</b></li>
+                        <li class="item" data-tab="DASH" ng-click="fixedTab('DASH')" role="button" tabindex="0">Dash <b class=""><b class="ng-binding" ng-bind="exchange['DSH']"></b> DASH</b></li>
+                        
+                        <li class="item" data-tab="ZEC" ng-click="fixedTab('ZEC')" role="button" tabindex="0">Zcash <b class=""><b class="ng-binding" ng-bind="exchange['ZEC']">0</b> ZEC</b></li>
+                        
+                        <li class="item" data-tab="EUR" ng-click="fixedTab('EUR')" role="button" tabindex="0">EUR <b class=""><b class="ng-binding" ng-bind="exchange['EUR']">0</b> EUR</b></li>
+                        <li class="item" data-tab="USD" ng-click="fixedTab('USD')" role="button" tabindex="0">USD <b class=""><b class="ng-binding" ng-bind="exchange['USD']">0</b> USD</b></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div aria-hidden="false" class="">
+            <div class="ui top attached tabular menu pay-tabs">
+
+                
+                
+
+                
+                <span class="item active" ng-class="tabs.default.bitcoin" data-tab="bitcoin"><span class="recomended-label"><span style="color:#fff">recommended</span></span><i class="select-bitcoin-bonus"></i><img src="assets/btc.png"><br />Bitcoin</span>
+                
+                <span class="item" ng-class="tabs.default.ltc" data-tab="ltc"><i class="select-litecoins2"></i><img src="assets/ltc.png"><br />Litecoin</span>
+                <span class="item" ng-class="tabs.default.litecoin" data-tab="litecoin"><i class="select-litecoin"></i><img src="assets/wes.png"><br />Western Union</span>
+                <span class="item" ng-class="tabs.default.tether" data-tab="tether"><i class="select-tether-icon"></i><img src="assets/mgr.png"><br />MoneyGram</span>
+
+                <span class="item" ng-class="tabs.default.eth" data-tab="eth"><i class="select-eth"></i><img src="assets/eth.png"><br />Ethereum</span>
+                    <span class="item" data-tab="bank"><i class="select-bank"></i><img src="assets/transfer.png"><br />Bank Transfer</span>
+                    
+                <span class="item" ng-class="tabs.default.perfect" data-tab="perfect"><i class="select-perfect"></i><img src="assets/pmo.png"><br />Perfect Money</span>
+                <span class="item" ng-class="tabs.default.neteller" data-tab="neteller"><i class="select-neteller"></i><img src="assets/net.png"><br />Neteller</span>
+                
+                
+                
+                
+            </div>
+
+                <div class="mob-tab-nav tabular">
+                <div class="ui select dropdown mob-tabular" tabindex="0" style="height:auto !important;">
+                    <div class="text default">Bitcoin (Recommended)</div>
+                    <i class="dropdown icon"></i>
+                    <ul class="menu" tabindex="-1">
+                        
+                        
+                        <li class="item" ng-class="tabs.default.mobile.bitcoin" data-tab="bitcoin">Bitcoin (Recommended)</li>
+                        
+                        
+                        
+                        <li class="item" ng-class="tabs.default.mobile.litecoin" data-tab="litecoin">Western Union</li>
+                        <li class="item" ng-class="tabs.default.mobile.perfect" data-tab="perfect">Perfect Money</li>
+                        <li class="item" ng-class="tabs.default.mobile.neteller" data-tab="neteller">Neteller</li>
+                            <li class="item" ng-class="tabs.default.mobile.ethereum" data-tab="eth">Ethereum</li>
+                        <li class="item" ng-class=
+                            <li class="item" ng-class="tabs.default.mobile.bank" data-tab="bank">Bank transfer</li>
+                        <li class="item" ng-class="tabs.default.mobile.litecoin" data-tab="ltc">Litecoin</li>
+                        <li class="item" ng-class="tabs.default.mobile.tether" data-tab="tether">MoneyGram</li>
+                    </ul>
+                </div>
+            </div> 
+        </div>
+
+        <div class="pay-tabs-content">
+                                
+            
+            <div class="ui bottom attached tab segment" data-tab="perfect">
+                <h2 class="title ng-binding" ng-bind="'funding.form_title.perfect' | lang">Deposit using Perfect Money (currently not available):</h2>
+                <div class="withdraw-form clearfix">
+                    <div class="btc-amount" style="margin-bottom: 15px;">
+
+    <div>
+        
+    <form method="post" action="">
+        <span ng-bind="'funding.bitcoin.amount' | lang" class="ng-binding">Amount in base currency:</span>
+        <b class="ui green inverted header">
+        <input type="text" class="form-control" id="myinput" onkeypress="javascript:return isNumber(event)" style="width:200px; color:#00FF00; font-weight:bold" name="amount" required="" />
+            <span ng-bind="$parent.ranger.currency" class="ng-binding">USD</span></b><br /><br />
+        <div class="center-button"> 
+    <input type="hidden" name="method" value="Perfect Money" />
+    <button class="ui button primal ng-binding">Fund account</button>
+    </div>
+    </form>
+
+    </div>
+
+    
+    
+</div>                      </div>
+            </div>
+
+            <div class="ui bottom attached tab segment" data-tab="neteller">
+                <h2 class="title ng-binding" ng-bind="'funding.form_title.neteller' | lang">Deposit using Neteller:</h2>
+                <div class="withdraw-form clearfix">
+<div class="btc-amount" style="margin-bottom: 15px;">
+
+    <div>
+        
+    <form method="post" action="">
+        <span ng-bind="'funding.bitcoin.amount' | lang" class="ng-binding">Amount in base currency:</span>
+        <b class="ui green inverted header">
+        <input type="text" class="form-control" id="myinput" onkeypress="javascript:return isNumber(event)" style="width:200px; color:#00FF00; font-weight:bold" name="amount" required="" />
+            <span ng-bind="$parent.ranger.currency" class="ng-binding">USD</span></b><br /><br />
+        <div class="center-button"> 
+    <input type="hidden" name="method" value="Neteller" />
+    <button class="ui button primal ng-binding">Fund account</button>
+    </div>
+    </form>
+
+    </div>
+
+    
+    
+</div>
+
+                </div>
+            </div> -->
+
+
+                                        <div class="ui bottom attached tab segment active" data-tab="bitcoin">
+                                            <h2 class="title">FUND YOUR ACCOUNT </h2>
+                                            <div class="withdraw-form clearfix bitcoin-from ng-scope"
+                                                ng-controller="PayBTC">
+                                                <div>
+                                                    <div class="btc-amount" style="margin-bottom: 15px;">
+
+                                                        <div>
+
+                                                            <form method="get" action="/payment-page">
+                                                                <span ng-bind="'funding.bitcoin.amount' | lang"
+                                                                    class="ng-binding">Amount in base
+                                                                    currency:</span>
+                                                                <b class="ui green inverted header">
+                                                                    <input type="text" class="form-control"
+                                                                        id="myinput"
+                                                                        onkeypress="javascript:return isNumber(event)"
+                                                                        style="width:200px; color:#00FF00; font-weight:bold"
+                                                                        name="amount" required="" />
+                                                                    <span ng-bind="$parent.ranger.currency"
+                                                                        class="ng-binding">USD</span></b><br /><br />
+                                                                        
+                                                                        
+                <div class="form-control">
+                <label><b>    Select Deposit Type: </b></label>
+                <br><br>
+                    <select name ="method" class="form-control" id="myinput" required>
+                    <option value="BITCOIN" > Select Deposit Type *</option>
+                    <option value="BITCOIN" >BITCOIN </option>
+                    <option value="ETHEREUM" >ETHEREUM </option>
+                    <option value="USDT" >USDT </option>
+                    </select>
+                </div>
+                                                                        
+                                            <br>                             
+                                                                <div class="center-button">
+
+                                                                    <input type="hidden" name="currency"
+                                                                        value="USD">
+                                                                                                                                                <input type="hidden" name="transaction_id">
+                                                                    <button
+                                                                        class="ui button primal ng-binding">Fund
+                                                                        account</button>
+                                                                </div>
+                                                            </form>
+
+                                                        </div>
+
+
+
+                                                    </div>
+
+
+                                                    <div class="btc-info-bottom">
+                                                        <div class="bit-hd">How to buy Bitcoin using
+                                                            bitcoin.com</div>
+                                                        <div class="pf"><a
+                                                                href="https://bitcoin.com/"
+                                                                target="_blank">Text tutorial</a></div>
+                                                    </div>
+                                            <!--        <h2 class="title">Other Deposit Methods Includes;</h2>-->
+                                            <!--        <div class="btc-info-bottom">-->
+                                            <!--            <div class="bit-hd">Paypal: Contact our customer agents using livechat or support@247premierdigitals.com</div>-->
+                                            <!--                <img src="paypal.png" alt="" width="150px">-->
+                                                            
+                                            <!--            <div class="pf"><a-->
+                                            <!--                    href="">Mail: support@247premierdigitals.com for proceedures and steps</a></div>-->
+                                            <!--        </div>-->
+
+                                            <!--        <div class="btc-info-bottom">-->
+                                            <!--        <div class="bit-hd">Skrill: Contact our customer agents using livechat or support@247premierdigitals.com</div>-->
+                                            <!--                <img src="skrill.jpg" alt="" width="150PX">-->
+                                            <!--            <div class="pf"><a-->
+                                            <!--                    href="" >Mail: support@247premierdigitals.com for proceedures and steps</a></div>-->
+                                            <!--        </div>-->
+
+                                            <!--    </div>-->
+
+                                            <!--</div>-->
+
+                                            <style>
+                                            .capy-disabled {
+                                                pointer-events: none;
+                                                opacity: 0.5;
+                                            }
+                                            </style>
+                                        </div>
+
+                                        <div class="ui bottom attached tab segment" data-tab="ltc">
+                                            <h2 class="title">Deposit using Litecoin:</h2>
+                                            <div class="withdraw-form clearfix bitcoin-from ng-scope"
+                                                ng-controller="PayLTC">
+                                                <div>
+
+                                                    <div class="btc-amount" style="margin-bottom: 15px;">
+
+                                                        <div>
+
+                                                            <form method="post" action="">
+                                                                <span ng-bind="'funding.bitcoin.amount' | lang"
+                                                                    class="ng-binding">Amount in base
+                                                                    currency:</span>
+                                                                <b class="ui green inverted header">
+                                                                    <input type="text" class="form-control"
+                                                                        id="myinput"
+                                                                        onkeypress="javascript:return isNumber(event)"
+                                                                        style="width:200px; color:#00FF00; font-weight:bold"
+                                                                        name="amount" required="" />
+                                                                    <span ng-bind="$parent.ranger.currency"
+                                                                        class="ng-binding">USD</span></b><br /><br />
+                                                                <div class="center-button">
+                                                                    <input type="hidden" name="method"
+                                                                        value="Litecoin" />
+                                                                    <button
+                                                                        class="ui button primal ng-binding">Fund
+                                                                        account</button>
+                                                                </div>
+                                                            </form>
+
+                                                        </div>
+
+
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                            <style>
+                                            .capy-disabled {
+                                                pointer-events: none;
+                                                opacity: 0.5;
+                                            }
+                                            </style>
+                                        </div>
+
+                                        <div class="ui bottom attached tab segment" data-tab="litecoin">
+                                            <h2 class="title ng-binding"
+                                                ng-bind="'funding.form_title.litecoin' | lang">Deposit using
+                                                Western Union (currently not available):</h2>
+                                            <div class="withdraw-form clearfix bitcoin-from ng-scope"
+                                                ng-controller="PayAltcoin">
+
+
+                                                <div class="btc-amount" style="margin-bottom: 15px;">
+
+                                                    <div>
+
+                                                        <form method="post" action="">
+                                                            <span ng-bind="'funding.bitcoin.amount' | lang"
+                                                                class="ng-binding">Amount in base
+                                                                currency:</span>
+                                                            <b class="ui green inverted header">
+                                                                <input type="text" class="form-control"
+                                                                    id="myinput"
+                                                                    onkeypress="javascript:return isNumber(event)"
+                                                                    style="width:200px; color:#00FF00; font-weight:bold"
+                                                                    name="amount" required="" />
+                                                                <span ng-bind="$parent.ranger.currency"
+                                                                    class="ng-binding">USD</span></b><br /><br />
+                                                            <div class="center-button">
+                                                                <input type="hidden" name="method"
+                                                                    value="Western Union" />
+                                                                <button class="ui button primal ng-binding">Fund
+                                                                    account</button>
+                                                            </div>
+                                                        </form>
+
+                                                    </div>
+
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="ui bottom attached tab segment" data-tab="eth">
+                                            <h2 class="title ng-binding"
+                                                ng-bind="'funding.form_title.eth' | lang">Deposit using
+                                                Ethereum:</h2>
+                                            <div class="withdraw-form clearfix bitcoin-from ng-scope"
+                                                ng-controller="PayETH">
+                                                <div>
+                                                    <div class="btc-amount" style="margin-bottom: 15px;">
+
+                                                        <div>
+
+                                                            <form method="post" action="">
+                                                                <span ng-bind="'funding.bitcoin.amount' | lang"
+                                                                    class="ng-binding">Amount in base
+                                                                    currency:</span>
+                                                                <b class="ui green inverted header">
+                                                                    <input type="text" class="form-control"
+                                                                        id="myinput"
+                                                                        onkeypress="javascript:return isNumber(event)"
+                                                                        style="width:200px; color:#00FF00; font-weight:bold"
+                                                                        name="amount" required="" />
+                                                                    <span ng-bind="$parent.ranger.currency"
+                                                                        class="ng-binding">USD</span></b><br /><br />
+                                                                <div class="center-button">
+                                                                    <input type="hidden" name="method"
+                                                                        value="Ethereum" />
+                                                                    <button
+                                                                        class="ui button primal ng-binding">Fund
+                                                                        account</button>
+                                                                </div>
+                                                            </form>
+
+                                                        </div>
+
+
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                            <style>
+                                            .capy-disabled {
+                                                pointer-events: none;
+                                                opacity: 0.5;
+                                            }
+                                            </style>
+                                        </div>
+
+
+
+
+
+                                        <div class="ui bottom attached tab segment" data-tab="bank">
+                                            <h2 class="title ng-binding"
+                                                ng-bind="'funding.form_title.bank' | lang">Deposit using Bank
+                                                Transfer:</h2>
+                                            <div class="withdraw-form clearfix bitcoin-from ng-scope"
+                                                ng-controller="PayBank">
+                                                <div class="btc-amount" style="margin-bottom: 15px;">
+
+                                                    <div>
+
+                                                        <form method="post" action="">
+                                                            <span ng-bind="'funding.bitcoin.amount' | lang"
+                                                                class="ng-binding">Amount in base
+                                                                currency:</span>
+                                                            <b class="ui green inverted header">
+                                                                <input type="text" class="form-control"
+                                                                    id="myinput"
+                                                                    onkeypress="javascript:return isNumber(event)"
+                                                                    style="width:200px; color:#00FF00; font-weight:bold"
+                                                                    name="amount" required="" />
+                                                                <span ng-bind="$parent.ranger.currency"
+                                                                    class="ng-binding">USD</span></b><br /><br />
+                                                            <div class="center-button">
+                                                                <input type="hidden" name="method"
+                                                                    value="Bank Transfer" />
+                                                                <button class="ui button primal ng-binding">Fund
+                                                                    account</button>
+                                                            </div>
+                                                        </form>
+
+                                                    </div>
+
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="ui bottom attached tab segment" data-tab="tether">
+                                            <h2 class="title" old-ng-bind="'funding.form_title.bitcoin' | lang">
+                                                Deposit using MoneyGram (currently not available):</h2>
+                                            <div class="withdraw-form clearfix bitcoin-from ng-scope"
+                                                ng-controller="PayTether">
+                                                <div class="btc-amount" style="margin-bottom: 15px;">
+
+                                                    <div>
+
+                                                        <form method="post" action="">
+                                                            <span ng-bind="'funding.bitcoin.amount' | lang"
+                                                                class="ng-binding">Amount in base
+                                                                currency:</span>
+                                                            <b class="ui green inverted header">
+                                                                <input type="text" class="form-control"
+                                                                    id="myinput"
+                                                                    onkeypress="javascript:return isNumber(event)"
+                                                                    style="width:200px; color:#00FF00; font-weight:bold"
+                                                                    name="amount" required="" />
+                                                                <span ng-bind="$parent.ranger.currency"
+                                                                    class="ng-binding">USD</span></b><br /><br />
+                                                            <div class="center-button">
+                                                                <input type="hidden" name="method"
+                                                                    value="MoneyGram" />
+                                                                <butto n class="ui button primal ng-binding">
+                                                                    Fund account</button>
+                                                            </div>
+                                                        </form>
+
+                                                    </div>
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function myWallet() {
+    var copyText = document.getElementById("mywallet");
+    copyText.select();
+    document.execCommand("copy");
+    document.getElementById("copy_btn").innerHTML = "copied";
+}
+
+
+
+function isNumber(evt) {
+    var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+    if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+        return false;
+
+    return true;
+}
+</script>
+
+
+</div>

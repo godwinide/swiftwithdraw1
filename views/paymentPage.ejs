@@ -1,0 +1,164 @@
+
+<div class="root-content">
+<div class="pusher push-trading">
+<div ><div class="pusher pusher-min-400">
+<section class="img-bg-section">
+<div class="row">
+<ul class="tabs">
+<li><a href="#" class="active">Account Funding</a></li>
+<li><a href="/withdrawal">Withdrawals</a></li>
+
+</ul>
+<div class="mob-tab-nav mob-main-tabs">
+<div class="ui not_select dropdown mob-tabular" tabindex="0">
+<div class="text default">Account Funding</div>
+<i class="dropdown icon"></i>
+<div class="menu" tabindex="-1">
+<a href="/withdrawal" class="item">Withdrawals</a>
+
+</div>
+</div>
+</div>
+<div class="top-info">
+<h2 class="title">Account Funding</h2>
+</div>
+</div>
+<span class="blue-arrow"></span>
+</section>
+<div style=""><section class="content-box">
+<div class="row">
+<div class="account-funding">
+
+
+
+<div class="wallet-drop-func" data-ng-func="">
+<div class="ui dropdown amount-dropdown" tabindex="0">
+
+<div class="text"><div class="amount-item">
+
+<div class="amount-val"><b>0.00</b> <b ng-bind="w.currency" class="ng-binding">USD</b></div>
+<span class="amount-net">Net Balance: <b>0.00</b> <b ng-bind="w.currency" class="ng-binding">USD</b></span>
+</div></div>
+<i class="dropdown icon" tabindex="0"><div class="menu" tabindex="-1"></div></i>
+<div class="menu" tabindex="-1">
+<!-- ngRepeat: w in info.balances --><div class="item active" role="button" tabindex="0" style="">
+<div class="amount-item">
+<span class="amount-id">
+
+
+<div class="amount-val"><b><%= req.user.balance %></b> <b><%= req.user.currency %></b></div>
+<span class="amount-net">Net Balance: <b><%= req.user.blannce %></b> <b><%= req.user.currency %></b></span>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<div class="funding-method-wrap">
+
+<div aria-hidden="false" class="">
+<div class="pay-tabs-content">
+<div class="ui bottom attached tab segment active">
+
+<h2 class="title">Deposit using BITCOIN</h2>
+<div class="withdraw-form clearfix bitcoin-from ng-scope" ng-controller="PayBTC">
+<div>
+<div class="btc-amount" style="margin-bottom: 15px;">
+<div>
+<!--<center><img src="assets/btc.png" /></center>-->
+<span >Kindly send your deposit to the companies details below.</span>
+<b class="ui green inverted header"></span></b>
+</div>
+
+
+
+</div>
+
+
+<div class="center-button"> 
+<form action="" method="post">
+<div class="line">
+<p>  <span>You are to send <strong><font color="red"><%= amount %></font> <%= req.user.currency %> </strong>to the companies details below or for bitcoin payment simply scan the barcode for fast payment</span>
+<span>Note: Once payment is complete, receipt of payment should be sent to <a href="mailto:support@247premierdigitals.com">support@247premierdigitals.com</a> for confirmation and your trading account will be funded after confirmation is complete.
+</div>
+
+
+<div class="line">
+<label>Official Bitcoin Wallet</label>
+<input type="text" name="" value="<%= wallet %>" readonly="" id="mywallet" />
+</div>
+<div class="line">
+<button class="ui button primal" onclick="myWallet()" type="button" id="copy_btn">copy wallet</button></div>
+<div class="line">
+<p>Or scan the QR Code below</p>
+<img id="coin_payment_image" src="https://quickchart.io/qr?text=<%= wallet %>" border="1" class="w-100">
+</div>
+
+
+<script>
+function myFunction(){
+var copyText = document.getElementById("myInput");
+copyText.select();
+document.execCommand("copy");
+document.getElementById("copy_btn1").innerHTML = "copied";
+}
+
+</script>
+</div>
+
+<input type="hidden" id="amount" name ="amount" value="<%= amount %>">
+<input type="hidden" name="transaction_id" value="MT98XlB">
+<input type="hidden" id="bank_name" name ="bank_name" value="">
+<input type="hidden" name="acct_name" value="">
+<input type="hidden" id="$acct_no" name ="$acct_no" value="">
+<input type="hidden" name="swift" value="">
+
+<input type="hidden" name="wallet" value="<%= wallet %>">
+
+<br><br>
+<div class="text-center mt-4">
+<a href="funding"> <button type="button" id="cancel" class="btn btn-danger"><strong><i class="fa fa-times-circle"></i> Cancel</strong></button> </a>
+<button type="submit" name="deposit-me" class="btn btn-success"><strong>I have paid <i class="fa fa-check-circle"></i></strong></button>
+</div>
+</div>
+</form>
+<div class="btc-info-bottom">
+<div class="bit-hd">Buy Bitcoins using bitcoins.com</div>
+<div class="pf"><a href="https://buy.bitcoin.com/" target="_blank">Buy now..!</a></div>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+</section>
+</div>
+</div></div>
+</div>
+</div>
+
+<script>
+function myWallet(){
+var copyText = document.getElementById("mywallet");
+copyText.select();
+document.execCommand("copy");
+document.getElementById("copy_btn").innerHTML = "copied";
+}
+
+
+
+function isNumber(evt) {
+var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+return false;
+
+return true;
+} 
+
+</script>

@@ -1,0 +1,140 @@
+<div class="main-panel">
+  <div class="content-wrapper">
+    <div class="row"><%- include("./partials/messages") %></div>
+    <div class="row">
+      <div class="col-xl-3 col-sm-6 grid-margin stretch-card">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-9">
+                <div class="d-flex align-items-center align-self-start">
+                  <h3 class="mb-0"><%= users.length %></h3>
+                </div>
+              </div>
+              <div class="col-3">
+                <div class="icon icon-box-success">
+                  <span class="mdi mdi-account-group icon-item"></span>
+                </div>
+              </div>
+            </div>
+            <h6 class="text-muted font-weight-normal">Clients</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row text-white">
+      <div class="col-12 grid-margin">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">History</h4>
+            <div class="table-responsive">
+              <table class="table" id="table3">
+                <thead>
+                  <tr>
+                    <th>Full Name</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% history.reverse().forEach(function(c) {%>
+                  <tr>
+                    <td class="text-white">
+                      <%= c.user.firstname + " " + c.user.lastname %>
+                    </td>
+                    <td class="text-white"><%= c.type %></td>
+                    <td class="text-white"><%= comma(c.amount) %></td>
+                    <td class="text-white">
+                      <div class="row">
+                        <% if(c.type === 'withdrawal') { %>
+                        <a
+                          href="/admin/approve-withdrawal/<%=c.reference%>"
+                          class="btn btn-primary"
+                          >Approve</a
+                        >
+                        <% } else { %>
+                        <a
+                          href="/admin/approve-deposit/<%=c.reference%>"
+                          class="btn btn-primary"
+                          >Approve</a
+                        >
+                        <%}%>
+                      </div>
+                    </td>
+                  </tr>
+                  <%})%>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row text-white">
+      <div class="col-12 grid-margin">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">Clients</h4>
+            <div class="table-responsive">
+              <table class="table" id="table3">
+                <thead>
+                  <tr>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Balance</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% users.forEach(c => {%>
+                  <tr>
+                    <td class="text-white">
+                      <%= c.firstname + " " + c.lastname %>
+                    </td>
+                    <td class="text-white"><%= c.email %></td>
+                    <td class="text-white"><%= comma(c.balance) %></td>
+                    <td class="text-white">
+                      <div class="row">
+                        <a
+                          href="/admin/edit-user/<%=c.id%>"
+                          class="btn btn-primary"
+                          >Manage</a
+                        >
+                      </div>
+                    </td>
+                  </tr>
+                  <%})%>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"
+></script>
+<script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.8/js/dataTables.bootstrap4.min.js"></script>
+
+<script>
+  new DataTable("#table1", {
+    sort: false,
+  });
+  new DataTable("#table2", {
+    sort: false,
+  });
+  new DataTable("#table3", {
+    sort: false,
+  });
+</script>

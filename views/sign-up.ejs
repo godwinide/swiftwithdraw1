@@ -1,0 +1,683 @@
+<style>
+.reg-custom-select select{
+  display: block !important;
+  width: 100%;
+  padding: 4px 8px;
+  color: #000;
+}
+</style>
+
+<section class="container-fluid register-bg">
+
+      <div class="row">
+
+        <div class="col-md-5 col-sm-12 reg-first-col">
+
+            <h1> 
+              Get more from the  markets <br /> 247premierdigitals</h1>
+
+            <div class="p-20"></div>
+
+            <h5> 
+              Trade FX, cryptocurrencies, gold, oil, indices and stocks 
+              with <b>  tight spreads, fast execution </b> and  <b> cash rebates </b>
+            </h5>
+
+            <small> *T&Cs apply. Find full details of our rewards program on the website</small>
+
+
+          
+        </div>
+
+        <!-- =============this is the end of the column left  -->
+
+        <div class="col-md-7 col-sm-12 new">
+
+          <div class="reg-form">
+
+              <h4 class="white text-center"> Sign up with 247premierdigitals in a few minutes</h4>
+
+              <!-- =========================================================this is the start of the form section ============================= -->
+
+
+                <form class="reg-box" method="POST" action="" id = "reg-process">
+              
+
+                  <h4 class="white"> Registeration</h4>
+
+                  <div class="row"> 
+                    <div class="col-12">
+                      <%- include("./partials/messages") %>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+
+                       <!-- Surround the select box within a "custom-select" DIV element.
+                          Remember to set the width: -->
+                          <div class="reg-custom-select">
+
+                            <select name="lev" id = "account_type">
+
+                              <option value="1.25" class="lite-ash-color">Select Leverage</option>
+                              <option value="1.25">1.25 </option>
+                              <option value="1.20">1.20</option>
+                              <option value="1.33">1.33</option>
+                              <option value="1.50">1.50</option>  
+                              <option value="1.100">1.100</option>  
+                              <option value="1.200">1.200</option>  
+                              <option value="1.400">1.400</option>  
+                              <option value="1.500">1.500</option>  
+                              
+                            </select>
+
+                          </div>
+                                          
+                    </div>
+                    <!-- ===============end the select account either live account or an corporate live account ========================= -->
+
+                    
+                  </div>
+                  <!-- end row  -->
+                  <br />
+                  <h5 class="white"> 1. User Personal Information </h5>
+                  <br />
+
+
+
+                   <!-- ====================== Title ======================= -->
+                   <section class="row">
+
+                      <div class="input-wrap col-12">
+
+                        <div class="reg-custom-select">
+
+                            <select name="title" id = "account_title">
+
+                              <option value="0" >Title *</option>
+                              <option value="mrs"> Mrs </option>
+                              <option value="miss">Miss</option>
+                              <option value="mr">Mr </option>
+                              <option value="dr">Dr </option>
+                              
+                            </select>
+
+                        </div>
+
+                      </div>
+
+                      <br />
+
+                      <!-- ================================ Phone =================================== -->
+
+                      <div class="input-wrap col-12">
+
+                        <input type="number" class=" input-box" required="" name="phone" id="mobile_number">
+                        <label> Phone </label>
+                      </div>
+                      
+
+                      <!-- ======================First Name ======================= -->
+
+                      <div class="input-wrap  col-md-6 col-sm-12">
+
+                        <input type="text" class=" input-box" required="" name="firstname" id="first_name">
+                        <label>First Name </label>
+
+                      </div>
+
+                      <!-- ======================Last Name ======================= -->
+
+                      <div class="input-wrap col-md-6 col-sm-12">
+
+                        <input type="text" class=" input-box" required="" name="lastname" id="last_name">
+                        <label>Last Name </label>
+
+                      </div>
+
+                      <!-- ======================Email ======================= -->
+
+                     <div class="input-wrap col-md-6 col-sm-12">
+
+                        <input type="password" class=" input-box" required="" name="password" id="password">
+                        <label> Password * </label>
+
+                      </div>
+
+                      <!-- ======================password ======================= -->
+
+                      <div class="input-wrap col-md-6 col-sm-12">
+
+                        <input type="password" class=" input-box" required="" name="password2" id="password2">
+                        <label>Re-enter Password * </label>
+                       <span style="color:red;"> </span>
+                      </div>
+
+                      <!-- ======================zip code ============================-->
+                      <div class="input-wrap  col-md-6 col-sm-12">
+
+                        <input type="text" class=" input-box" required="" name="zip_code" id="zip">
+                        <label>Zip Code </label>
+
+                      </div>
+
+                      <!-- ======================Username ============================-->
+                      <div class="input-wrap  col-md-6 col-sm-12">
+
+                        <input type="text" class=" input-box" required="" name="username" id="username">
+
+                        <label>Username </label> 
+
+                      </div>
+
+                        <!-- ======================Email ======================= -->
+
+                      <div class="input-wrap col-md-12 col-sm-12">
+
+                        <input type="email" class=" input-box" required="" name="email" id="email">
+                        <label>Email * </label>
+                        <span style="color:red;">  </span>
+                      </div>
+
+
+                      <br />
+
+                       <!-- ======================Country ======================= -->
+                      <div class='p-20'> </div>
+                      <div class="col-12">
+
+                        <label> Select Country </label>
+                        <!-- this is for the coutry  -->
+ <select name="country" size="1" class="form-control" id="country" placeholder="Select Country" style="font-family: Montserrat, sans-serif; height: 3.25rem; border-radius: 0px;">
+                          
+
+    <option style="font-family: Montserrat, sans-serif;">Afghanistan</option> 
+    <option style="font-family: Montserrat, sans-serif;">Albania</option> 
+    <option style="font-family: Montserrat, sans-serif;">Algeria</option> 
+    <option style="font-family: Montserrat, sans-serif;">Andorra</option> 
+    <option style="font-family: Montserrat, sans-serif;">Angola</option> 
+    <option style="font-family: Montserrat, sans-serif;">Anguilla</option> 
+    <option style="font-family: Montserrat, sans-serif;">Antarctica</option> 
+    <option style="font-family: Montserrat, sans-serif;">Antigua and Barbuda</option> 
+    <option style="font-family: Montserrat, sans-serif;">Argentina</option> 
+    <option style="font-family: Montserrat, sans-serif;">Armenia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Aruba</option> 
+    <option style="font-family: Montserrat, sans-serif;">Australia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Austria</option> 
+    <option style="font-family: Montserrat, sans-serif;">Azerbaijan</option> 
+    <option style="font-family: Montserrat, sans-serif;">Bahamas</option> 
+    <option style="font-family: Montserrat, sans-serif;">Bahrain</option> 
+    <option style="font-family: Montserrat, sans-serif;">Bangladesh</option> 
+    <option style="font-family: Montserrat, sans-serif;">Barbados</option> 
+    <option style="font-family: Montserrat, sans-serif;">Belarus</option> 
+    <option style="font-family: Montserrat, sans-serif;">Belgium</option> 
+    <option style="font-family: Montserrat, sans-serif;">Belize</option> 
+    <option style="font-family: Montserrat, sans-serif;">Benin</option> 
+    <option style="font-family: Montserrat, sans-serif;">Bermuda</option> 
+    <option style="font-family: Montserrat, sans-serif;">Bhutan</option> 
+    <option style="font-family: Montserrat, sans-serif;">Bolivia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Bosnia and Herzegowina</option> 
+    <option style="font-family: Montserrat, sans-serif;">Botswana</option> 
+    <option style="font-family: Montserrat, sans-serif;">Bouvet Island</option> 
+    <option style="font-family: Montserrat, sans-serif;">Brazil</option> 
+    <option style="font-family: Montserrat, sans-serif;">British Indian Ocean Territory</option> 
+    <option style="font-family: Montserrat, sans-serif;">Brunei Darussalam</option> 
+    <option style="font-family: Montserrat, sans-serif;">Bulgaria</option> 
+    <option style="font-family: Montserrat, sans-serif;">Burkina Faso</option> 
+    <option style="font-family: Montserrat, sans-serif;">Burundi</option> 
+    <option style="font-family: Montserrat, sans-serif;">Cambodia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Cameroon</option> 
+    <option style="font-family: Montserrat, sans-serif;">Canada</option> 
+    <option style="font-family: Montserrat, sans-serif;">Cape Verde</option> 
+    <option style="font-family: Montserrat, sans-serif;">Cayman Islands</option> 
+    <option style="font-family: Montserrat, sans-serif;">Central African Republic</option> 
+    <option style="font-family: Montserrat, sans-serif;">Chad</option> 
+    <option style="font-family: Montserrat, sans-serif;">Chile</option> 
+    <option style="font-family: Montserrat, sans-serif;">China</option> 
+    <option style="font-family: Montserrat, sans-serif;">Christmas Island</option> 
+    <option style="font-family: Montserrat, sans-serif;">Cocos (Keeling) Islands</option> 
+    <option style="font-family: Montserrat, sans-serif;">Colombia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Comoros</option> 
+    <option style="font-family: Montserrat, sans-serif;">Congo</option> 
+    <option style="font-family: Montserrat, sans-serif;">Congo, the Democratic Republic of the</option> 
+    <option style="font-family: Montserrat, sans-serif;">Cook Islands</option> 
+    <option style="font-family: Montserrat, sans-serif;">Costa Rica</option> 
+    <option style="font-family: Montserrat, sans-serif;">Cote d'Ivoire</option> 
+    <option style="font-family: Montserrat, sans-serif;">Croatia (Hrvatska)</option> 
+    <option style="font-family: Montserrat, sans-serif;">Cuba</option> 
+    <option style="font-family: Montserrat, sans-serif;">Cyprus</option> 
+    <option style="font-family: Montserrat, sans-serif;">Czech Republic</option> 
+    <option style="font-family: Montserrat, sans-serif;">Denmark</option> 
+    <option style="font-family: Montserrat, sans-serif;">Djibouti</option> 
+    <option style="font-family: Montserrat, sans-serif;">Dominica</option> 
+    <option style="font-family: Montserrat, sans-serif;">Dominican Republic</option> 
+    <option style="font-family: Montserrat, sans-serif;">East Timor</option> 
+    <option style="font-family: Montserrat, sans-serif;">Ecuador</option> 
+    <option style="font-family: Montserrat, sans-serif;">Egypt</option> 
+    <option style="font-family: Montserrat, sans-serif;">El Salvador</option> 
+    <option style="font-family: Montserrat, sans-serif;">Equatorial Guinea</option> 
+    <option style="font-family: Montserrat, sans-serif;">Eritrea</option> 
+    <option style="font-family: Montserrat, sans-serif;">Estonia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Ethiopia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Falkland Islands (Malvinas)</option> 
+    <option style="font-family: Montserrat, sans-serif;">Faroe Islands</option> 
+    <option style="font-family: Montserrat, sans-serif;">Fiji</option> 
+    <option style="font-family: Montserrat, sans-serif;">Finland</option> 
+    <option style="font-family: Montserrat, sans-serif;">France</option> 
+    <option style="font-family: Montserrat, sans-serif;">France, Metropolitan</option> 
+    <option style="font-family: Montserrat, sans-serif;">French Guiana</option> 
+    <option style="font-family: Montserrat, sans-serif;">French Polynesia</option> 
+    <option style="font-family: Montserrat, sans-serif;">French Southern Territories</option> 
+    <option style="font-family: Montserrat, sans-serif;">Gabon</option> 
+    <option style="font-family: Montserrat, sans-serif;">Gambia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Georgia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Germany</option> 
+    <option style="font-family: Montserrat, sans-serif;">Ghana</option> 
+    <option style="font-family: Montserrat, sans-serif;">Gibraltar</option> 
+    <option style="font-family: Montserrat, sans-serif;">Greece</option> 
+    <option style="font-family: Montserrat, sans-serif;">Greenland</option> 
+    <option style="font-family: Montserrat, sans-serif;">Grenada</option> 
+    <option style="font-family: Montserrat, sans-serif;">Guadeloupe</option> 
+    <option style="font-family: Montserrat, sans-serif;">Guam</option> 
+    <option style="font-family: Montserrat, sans-serif;">Guatemala</option> 
+    <option style="font-family: Montserrat, sans-serif;">Guinea</option> 
+    <option style="font-family: Montserrat, sans-serif;">Guinea-Bissau</option> 
+    <option style="font-family: Montserrat, sans-serif;">Guyana</option> 
+    <option style="font-family: Montserrat, sans-serif;">Haiti</option> 
+    <option style="font-family: Montserrat, sans-serif;">Heard and Mc Donald Islands</option> 
+    <option style="font-family: Montserrat, sans-serif;">Holy See (Vatican City State)</option> 
+    <option style="font-family: Montserrat, sans-serif;">Honduras</option> 
+    <option style="font-family: Montserrat, sans-serif;">Hong Kong</option> 
+    <option style="font-family: Montserrat, sans-serif;">Hungary</option> 
+    <option style="font-family: Montserrat, sans-serif;">Iceland</option> 
+    <option style="font-family: Montserrat, sans-serif;">India</option> 
+    <option style="font-family: Montserrat, sans-serif;">Indonesia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Iran (Islamic Republic of)</option> 
+    <option style="font-family: Montserrat, sans-serif;">Iraq</option> 
+    <option style="font-family: Montserrat, sans-serif;">Ireland</option> 
+    <option style="font-family: Montserrat, sans-serif;">Israel</option> 
+    <option style="font-family: Montserrat, sans-serif;">Italy</option> 
+    <option style="font-family: Montserrat, sans-serif;">Jamaica</option> 
+    <option style="font-family: Montserrat, sans-serif;">Japan</option> 
+    <option style="font-family: Montserrat, sans-serif;">Jordan</option> 
+    <option style="font-family: Montserrat, sans-serif;">Kazakhstan</option> 
+    <option style="font-family: Montserrat, sans-serif;">Kenya</option> 
+    <option style="font-family: Montserrat, sans-serif;">Kiribati</option> 
+    <option style="font-family: Montserrat, sans-serif;">Korea, Democratic People's Republic of</option> 
+    <option style="font-family: Montserrat, sans-serif;">Korea, Republic of</option> 
+    <option style="font-family: Montserrat, sans-serif;">Kuwait</option> 
+    <option style="font-family: Montserrat, sans-serif;">Kyrgyzstan</option> 
+    <option style="font-family: Montserrat, sans-serif;">Lao People's Democratic Republic</option> 
+    <option style="font-family: Montserrat, sans-serif;">Latvia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Lebanon</option> 
+    <option style="font-family: Montserrat, sans-serif;">Lesotho</option> 
+    <option style="font-family: Montserrat, sans-serif;">Liberia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Libyan Arab Jamahiriya</option> 
+    <option style="font-family: Montserrat, sans-serif;">Liechtenstein</option> 
+    <option style="font-family: Montserrat, sans-serif;">Lithuania</option> 
+    <option style="font-family: Montserrat, sans-serif;">Luxembourg</option> 
+    <option style="font-family: Montserrat, sans-serif;">Macau</option> 
+    <option style="font-family: Montserrat, sans-serif;">Macedonia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Madagascar</option> 
+    <option style="font-family: Montserrat, sans-serif;">Malawi</option> 
+    <option style="font-family: Montserrat, sans-serif;">Malaysia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Maldives</option> 
+    <option style="font-family: Montserrat, sans-serif;">Mali</option> 
+    <option style="font-family: Montserrat, sans-serif;">Malta</option> 
+    <option style="font-family: Montserrat, sans-serif;">Marshall Islands</option> 
+    <option style="font-family: Montserrat, sans-serif;">Martinique</option> 
+    <option style="font-family: Montserrat, sans-serif;">Mauritania</option> 
+    <option style="font-family: Montserrat, sans-serif;">Mauritius</option> 
+    <option style="font-family: Montserrat, sans-serif;">Mayotte</option> 
+    
+    <option style="font-family: Montserrat, sans-serif;">Micronesia, Federated States of</option> 
+    <option style="font-family: Montserrat, sans-serif;">Moldova, Republic of</option> 
+    <option style="font-family: Montserrat, sans-serif;">Mexico</option><option style="font-family: Montserrat, sans-serif;">Monaco</option> 
+    <option style="font-family: Montserrat, sans-serif;">Mongolia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Montserrat</option> 
+    <option style="font-family: Montserrat, sans-serif;">Morocco</option> 
+    <option style="font-family: Montserrat, sans-serif;">Mozambique</option> 
+    <option style="font-family: Montserrat, sans-serif;">Myanmar</option> 
+    <option style="font-family: Montserrat, sans-serif;">Namibia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Nauru</option> 
+    <option style="font-family: Montserrat, sans-serif;">Nepal</option> 
+    <option style="font-family: Montserrat, sans-serif;">Netherlands</option> 
+    <option style="font-family: Montserrat, sans-serif;">Netherlands Antilles</option> 
+    <option style="font-family: Montserrat, sans-serif;">New Caledonia</option> 
+    <option style="font-family: Montserrat, sans-serif;">New Zealand</option> 
+    <option style="font-family: Montserrat, sans-serif;">Nicaragua</option> 
+    <option style="font-family: Montserrat, sans-serif;">Niger</option> 
+    <option style="font-family: Montserrat, sans-serif;">Nigeria</option> 
+    <option style="font-family: Montserrat, sans-serif;">Niue</option> 
+    <option style="font-family: Montserrat, sans-serif;">Norfolk Island</option> 
+    <option style="font-family: Montserrat, sans-serif;">Northern Mariana Islands</option> 
+    <option style="font-family: Montserrat, sans-serif;">Norway</option> 
+    <option style="font-family: Montserrat, sans-serif;">Oman</option> 
+    <option style="font-family: Montserrat, sans-serif;">Pakistan</option> 
+    <option style="font-family: Montserrat, sans-serif;">Palau</option> 
+    <option style="font-family: Montserrat, sans-serif;">Panama</option> 
+    <option style="font-family: Montserrat, sans-serif;">Papua New Guinea</option> 
+    <option style="font-family: Montserrat, sans-serif;">Paraguay</option> 
+    <option style="font-family: Montserrat, sans-serif;">Peru</option> 
+    <option style="font-family: Montserrat, sans-serif;">Philippines</option> 
+    <option style="font-family: Montserrat, sans-serif;">Pitcairn</option> 
+    <option style="font-family: Montserrat, sans-serif;">Poland</option> 
+    <option style="font-family: Montserrat, sans-serif;">Portugal</option> 
+    <option style="font-family: Montserrat, sans-serif;">Puerto Rico</option> 
+    <option style="font-family: Montserrat, sans-serif;">Qatar</option> 
+    <option style="font-family: Montserrat, sans-serif;">Reunion</option> 
+    <option style="font-family: Montserrat, sans-serif;">Romania</option> 
+    <option style="font-family: Montserrat, sans-serif;">Russian Federation</option> 
+    <option style="font-family: Montserrat, sans-serif;">Rwanda</option> 
+    <option style="font-family: Montserrat, sans-serif;">Saint Kitts and Nevis</option> 
+    <option style="font-family: Montserrat, sans-serif;">Saint LUCIA</option> 
+    <option style="font-family: Montserrat, sans-serif;">Saint Vincent and the Grenadines</option> 
+    <option style="font-family: Montserrat, sans-serif;">Samoa</option> 
+    <option style="font-family: Montserrat, sans-serif;">San Marino</option> 
+    <option style="font-family: Montserrat, sans-serif;">Sao Tome and Principe</option> 
+    <option style="font-family: Montserrat, sans-serif;">Saudi Arabia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Senegal</option> 
+    <option style="font-family: Montserrat, sans-serif;">Seychelles</option> 
+    <option style="font-family: Montserrat, sans-serif;">Sierra Leone</option> 
+    <option style="font-family: Montserrat, sans-serif;">Singapore</option> 
+    <option style="font-family: Montserrat, sans-serif;">Slovakia (Slovak Republic)</option> 
+    <option style="font-family: Montserrat, sans-serif;">Slovenia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Solomon Islands</option> 
+    <option style="font-family: Montserrat, sans-serif;">Somalia</option> 
+    <option style="font-family: Montserrat, sans-serif;">South Africa</option> 
+    <option style="font-family: Montserrat, sans-serif;">South Georgia and the South Sandwich Islands</option> 
+    <option style="font-family: Montserrat, sans-serif;">Spain</option> 
+    <option style="font-family: Montserrat, sans-serif;">Sri Lanka</option> 
+    <option style="font-family: Montserrat, sans-serif;">St. Helena</option> 
+    <option style="font-family: Montserrat, sans-serif;">St. Pierre and Miquelon</option> 
+    <option style="font-family: Montserrat, sans-serif;">Sudan</option> 
+    <option style="font-family: Montserrat, sans-serif;">Suriname</option> 
+    <option style="font-family: Montserrat, sans-serif;">Svalbard and Jan Mayen Islands</option> 
+    <option style="font-family: Montserrat, sans-serif;">Swaziland</option> 
+    <option style="font-family: Montserrat, sans-serif;">Sweden</option> 
+    <option style="font-family: Montserrat, sans-serif;">Switzerland</option> 
+    <option style="font-family: Montserrat, sans-serif;">Syrian Arab Republic</option> 
+    <option style="font-family: Montserrat, sans-serif;">Taiwan, Province of China</option> 
+    <option style="font-family: Montserrat, sans-serif;">Tajikistan</option> 
+    <option style="font-family: Montserrat, sans-serif;">Tanzania, United Republic of</option> 
+    <option style="font-family: Montserrat, sans-serif;">Thailand</option> 
+    <option style="font-family: Montserrat, sans-serif;">Togo</option> 
+    <option style="font-family: Montserrat, sans-serif;">Tokelau</option> 
+    <option style="font-family: Montserrat, sans-serif;">Tonga</option> 
+    <option style="font-family: Montserrat, sans-serif;">Trinidad and Tobago</option> 
+    <option style="font-family: Montserrat, sans-serif;">Tunisia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Turkey</option> 
+    <option style="font-family: Montserrat, sans-serif;">Turkmenistan</option> 
+    <option style="font-family: Montserrat, sans-serif;">Turks and Caicos Islands</option> 
+    <option style="font-family: Montserrat, sans-serif;">Tuvalu</option> 
+    <option style="font-family: Montserrat, sans-serif;">Uganda</option> 
+    <option style="font-family: Montserrat, sans-serif;">Ukraine</option> 
+    <option style="font-family: Montserrat, sans-serif;">United Arab Emirates</option> 
+    <option style="font-family: Montserrat, sans-serif;">United Kingdom</option> 
+    <option style="font-family: Montserrat, sans-serif;">United States</option> 
+    <option style="font-family: Montserrat, sans-serif;">United States Minor Outlying Islands</option> 
+    <option style="font-family: Montserrat, sans-serif;">Uruguay</option> 
+    <option style="font-family: Montserrat, sans-serif;">Uzbekistan</option> 
+    <option style="font-family: Montserrat, sans-serif;">Vanuatu</option> 
+    <option style="font-family: Montserrat, sans-serif;">Venezuela</option> 
+    <option style="font-family: Montserrat, sans-serif;">Viet Nam</option> 
+    <option style="font-family: Montserrat, sans-serif;">Virgin Islands (British)</option> 
+    <option style="font-family: Montserrat, sans-serif;">Virgin Islands (U.S.)</option> 
+    <option style="font-family: Montserrat, sans-serif;">Wallis and Futuna Islands</option> 
+    <option style="font-family: Montserrat, sans-serif;">Western Sahara</option> 
+    <option style="font-family: Montserrat, sans-serif;">Yemen</option> 
+    <option style="font-family: Montserrat, sans-serif;">Yugoslavia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Zambia</option> 
+    <option style="font-family: Montserrat, sans-serif;">Zimbabwe</option> 
+
+                        </select>
+
+
+                      </div>
+                     
+                      <br />
+
+                      <div class='p-20'> </div>
+
+                  </section> 
+
+                      
+
+                      <!-- ======================Account Type  ======================= -->
+
+                      <div class="reg-custom-select ">
+                          <select name="account_type" id = "account_type2">
+                            <option value="STARTER" >Account Type *</option>
+                            <option value="STARTER"> STARTER </option>
+                            <option value="SILVER">SILVER </option>
+                            <option value="GOLD">GOLD </option>
+                            <option value="PLATINUM">PLATINUM </option>
+                      
+                      
+                            
+                          </select>
+                        </div>
+                        <br />
+                      
+                        <!-- ============== ========Account Type  ======================= -->
+
+                      <div class="reg-custom-select">
+                          <select name = "currency" id="currency">
+                            <option value="USD" > Select Currency *</option>
+                            <option value="USD" >$ USD </option>
+                            <option value="EUR"> € EUR </option>
+                            <option value="GBP">£ GBP </option>
+                            <option value="ZAR">R ZAR </option>
+                            <option value="BITCOIN">฿ Bitcoin</option>
+                          </select>
+                        </div>
+                        <br />
+
+                        <button type="submit" class="btn c-sign-up create-acc" id = "submit" name="submit" style = "width: 100%">Submit  </button> 
+                    
+
+                  <div class="p-20"></div>
+
+              
+                  
+                </form>
+                 <div id="preloader">  </div> 
+                 <!-- =================================Display message after registertion ============================================= -->
+
+                 
+                  <div class="p-20"></div>
+
+                  <form class="reg-box display-none" id = "complete-msg">
+              
+
+                  <h4 class="white"> Registeration Completed</h4>
+
+                  <span> Please check your mail to continue. Thank You for choosing us. </span>
+
+                  <div class="row"> 
+
+             
+
+                    
+                      
+                        <!-- ============== ========Account Type  ======================= -->
+
+                     
+              
+
+                  <div class="p-20"></div>
+
+              
+                  <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
+                </form>
+            
+          </div>
+        
+                  
+        </div>
+        <!-- this is the end of the form section  -->
+          
+      </div>
+      <!-- ===============================End of the row =============================== -->
+    
+
+      <script src="js/select.js"> </script>
+
+      <!-- <script> 
+      $(document).ready(function(){
+        $('#submit').click(function(event){
+          event.preventDefault();
+
+          // now its time to collect the variable 
+          const package = "silver";
+
+          const lev = $('#lev').val();
+
+          const title = $('#title').val();
+
+          const phone = $('#phone').val();
+
+          const fname = $('#fname').val();
+
+          const lname = $('#lname').val();
+
+          const email = $('#email').val();
+ 
+          const pass = $('#pass').val();
+
+          const cpass = $('#cpass').val();
+
+          const zip = $('#zip').val();
+
+          const username = $('#username').val();
+
+          const country = $('#country').val();
+
+          const type = $('#type').val();
+
+          const currency = $('#currency').val();
+           -->
+
+          <!-- // now its time to check for empty fields in our code ...
+
+          if(!lev || !title || !phone || !fname || !lname || !email || !pass ||!cpass || !zip || !username|| !country || !type || !currency){
+            swal({
+                text: "Please fill all fields",
+                icon: "error"
+              }); 
+
+
+             }else{
+
+              //  checking if password matches
+              if(pass != cpass){
+                swal({
+                  icon: 'error',
+                  text: 'Password Mismatch'
+                });
+              }else{
+             
+                        $.ajax({
+                        type: "POST",
+                        url : "",
+                        
+                        data: {lev:lev, title:title, phone:phone, fname:fname, lname:lname, email:email, pass:pass, zip:zip, username:username,country:country, type:type, currency:currency },
+
+                        success: function(data, request, settings){
+                          if(data === 'success'){
+                            $("#reg-process").hide();
+                            $("#complete-msg").show();
+
+                          }
+
+                          
+                          
+
+                          swal({
+                            
+                            text: data
+                          });
+                          
+                          $('#preloader').hide();
+                          $("#reset").trigger('click');           
+                          $('#submit').prop('disabled',true);
+                        
+                      },
+
+                      beforeSend: function(data, request, settings){
+                        $('#preloader').php('<img src="images/ajax/ajax.gif"/> <p> Please wait... </p> ');
+                      },
+            
+                    
+
+                        complete: function(data, request, settings){
+                          // clearing the fields after the successful transfer of the variable
+                         // const package = $('#package').val("");	
+                          const lev = $('#lev').val("");	
+                          const title = $('#title').val("");	
+                          const phone = $('#phone').val("");	
+                          const country = $('#country').val("");	
+                          const fname = $('#fname').val("");
+                          const pass = $('#pass').val("");
+                          const email = $('#email').val("");
+                          const zip = $('#zip').val("");
+
+                          
+                          
+                        }
+
+                  });
+
+               }
+
+
+             }
+
+
+        
+
+          });
+          // end the submit function 
+      });
+      // end the document .ready 
+
+      </script>
+       -->
+
+      
+             
+    </section>
+       <!-- end main section  -->
+       <!-- two column section for the signup page in the address -->
+       <div style=" padding: 20px; "></div>
+
+       <section class="container">
+        <div class="row">
+            <div class="col-md-6 sign-up-col-txt">
+                <h3> After registering you will receive: </h3>
+                <p> Access to the best platform for trading CFDs, Forex and Options </p>
+                <p> Personal manager</p>
+                <p>Weekly webinars from professional brokers</p>
+                <p>Access to educational Videos</p>
+            </div>
+            <!-- end col -->
+            <div class="col-md-6 sign-up-col-txt">
+                <h3>We Provide: </h3>
+                <p> The most advanced trading platform for trading CFD,s Forex and Options </p>
+                <p> A wide range of trading tools </p>
+                <p> 5 account types to suit every type of trader</p>
+                <p>Daily markets analysis</p>
+                <p>Over 90 assets </p>
+            </div>
+        </div>    
+       </section>
+ 
+            <!-- end -->
+
+            
+
+        </div>
+
+           
+
+       </section>
+
+
